@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>The normal menu of Flying Dutchman</title>
+	<link rel="stylesheet" type="text/css" href="normal_menu.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+		body {
+			font-family: Times New Roman;
+		}
+
+		* {
+			box-sizing: border-box;
+		}
+
+
+		.search {
+			padding: 10px;
+		}
+
+		form.searchbar input[type=text] {
+			padding: 10px;
+			font-size: 17px;
+			border: 1px solid grey;
+			float: left;
+			width: 80%;
+			background: #f1f1f1;
+		}
+
+		form.searchbar button {
+			float: left;
+			width: 20%;
+			padding: 10px;
+			background: #2196F3;
+			color: white;
+			font-size: 17px;
+			border: 1px solid grey;
+			border-left: none;
+			cursor: pointer;
+		}
+
+		form.searchbar button:hover {
+			background: #0b7dda;
+		}
+
+		form.searchbar::after {
+			content: "";
+			clear: both;
+			display: table;
+		}
+
+		form.searchbar {
+			margin:auto;
+			max-width:500px;
+		}
+
+
+
+
+	</style>
+</head>
+<body>
+	<header>
+	<div class="pubname">The Flying Dutchman
+	</div>
+	<div class="topnav">
+  		<a href="#beer">Beer</a>
+  		<a href="#redwine">Red Wine</a>
+        <a href="#non-alcohol">Non-alcohol</a> 
+  		<!-- The name of log-in html hasn't been established. -->
+  		<!-- The categories are not confirmed. -->
+ 	 	<a class="viplog" href="log in">VIP Log-in </a>
+		<!-- <input type="text" placeholder="Search.."> -->
+ 
+	</div>
+
+	</header>
+
+	<!-- Here is the searchbar -->
+
+
+	<div class="search">
+		<!-- The form -->
+		<form class="searchbar" action="/action_page.php" href="normal_menu.css">
+  			<input type="text" placeholder="Search.." name="search2">
+  			<button type="submit"><i class="fa fa-search"></i></button>
+		</form>
+
+	</div>
+	
+
+	<!-- Here are the two boxes of Recommendation & Menu margin:auto;max-width:500px-->
+	
+
+	<div class="Mainbody">
+		<div class="recommendation">Our Recommendation
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+
+		</div>
+
+		
+		<div class="beermenu">Beer Menu
+			<li>1</li>
+			<li>2</li>
+			<li>3</li> 
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+		</div>
+		<div class="clear">
+			<!--增加空div，css中设置clear属性-->
+		</div>
+	
+	</div>
+
+	
+	<div class="footer">Contact Us
+  	
+	</div>
+
+
+
+</body>
+</html>

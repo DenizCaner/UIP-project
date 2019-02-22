@@ -1,4 +1,5 @@
-[{
+var DB2 = {
+    "spirits" : [{
     "nr": "10001",
     "articleid": "25053",
     "articletype": "100",
@@ -2499,3 +2500,4 @@
     "organic": "0",
     "kosher": "0"
 }]
+};

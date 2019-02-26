@@ -1,13 +1,98 @@
+#pubname {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    font-size: 2.5em;
+    background: #556B2F;
+    font-family: Old English Text MT;
+    font-weight: bold;
+    color: navajowhite;
+    padding: 10px;
+    border: groove 5px ghostwhite;
+    box-sizing: border-box;
+}
+
+/* Search bar */
+
+.pubname input[type=text] {
+  float: right;
+  box-sizing: border-box;
+  position: absolute;
+  right: 20%;
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+  box-sizing: border-box;
+}
+
+.page {
+  background: #eaeaed;
+}
+
+.pageElements {
+  box-sizing: border-box;
+  position: relative;
+  top:15px;
+}
+
+/* Weeklu Recommendations */
+.weeklyHeader {
+    box-sizing: border-box;
+    position: absolute;
+    top: 16%;
+    width: 40%;
+    list-style: none
+    padding: 4px;
+    border-radius: 10px 10px 0px 0px; /* We use rounded top corners to give the tab feeling */
+    background-color: #556B2F;
+    color: navajowhite;
+}
+
+.weekly {
+    box-sizing: border-box;
+    position: absolute;
+    top:18%;
+    width: 40%;
+    height: 40%;
+    background-color: navajowhite; 
+    border: ghostwhite groove 5px;
+}
+
+.foodMenuHeader {
+    box-sizing: border-box;
+    position: absolute;
+    top: 60%;
+    width: 40%;
+    list-style: none
+    padding: 4px;
+    border-radius: 10px 10px 0px 0px; /* We use rounded top corners to give the tab feeling */
+    background-color: #556B2F;
+    color: navajowhite;
+}
+
+.foodMenu {
+    box-sizing: border-box;
+    position: absolute;
+    top:62%;
+    width: 40%;
+    height: 30%;
+    background-color: navajowhite; 
+    border: ghostwhite groove 5px;
+}
+
 /*
 The common definition of the menus.
 */
 .menu {
+    box-sizing: border-box;
     position: absolute;
-    top: 145px;
-    right: 50px;
+    width: 40%;
+    height: 40%;
+    top:18%;
+    left: 50%;
     background-color: navajowhite;
-    width: 400px;
-    height: 500px;
     border: ghostwhite groove 5px;
     padding: 5px;
 }
@@ -16,10 +101,11 @@ The common definition of the menus.
 Individual menu styles =============================
 */
 #menutabs {
+    box-sizing: border-box;
     position: absolute;
-    top: 100px;
-    right: 50px;
-    width: 400px;
+    top: 13%;
+    width: 40%;
+    left: 50%;
 }
 /*
 The menu tabs are actually list items in a refined horisontal list.
@@ -32,20 +118,16 @@ ul#mtabs {
 The menu tabs
 */
 #mtabs li {
+    box-sizing: border-box;
     margin: auto;
     float: left;
     display: inline;  /* Makes the list horisontal */
     padding: 4px;
     border-radius: 10px 10px 0px 0px; /* We use rounded top corners to give the tab feeling */
-    background-color: black;
-    color: white;
+    background-color: #556B2F;
+    color: navajowhite;
 }
 /* End menu styles ==========================
 */
-#display {
-    text-align: right;
-    font-size: larger;
-    background-color: darkgrey;
-    color: white;
 
-}
+

@@ -25,9 +25,9 @@
 			<h2 class="tsum" >
 			0 kr
 			</h2>
-			<p class="order" id="o1"> Order : 
+			<p class="order" id="o1" ondrop="drop(event)" ondragover="allowDrop(event)"> Order : 
 			</p>
-			<button onclick="pay()"> Pay </button> <button> Edit </button>
+			<button onclick="pay(1)"> Pay </button> <button> Edit </button>
 		</td>
 		<td class="tables" id="t2" ondrop="drop(event)" ondragover="allowDrop(event)">
 			<h1 class="tname">
@@ -36,53 +36,51 @@
 			<h2 class="tsum" >
 			0 kr
 			</h2>
-			<p class="order" id="o2"> Order : 
+			<p class="order" id="o2"ondrop="drop(event)" ondragover="allowDrop(event)"> Order : 
 			</p>
-			<button onclick="pay()"> Pay </button> <button> Edit </button>
+			<button onclick="pay(2)"> Pay </button> <button> Edit </button>
 		</td>
 		<td rowspan="3" class="menu" id="mt"> 
-			<table> 
-			<tr>
+			
 		<!-- Menutabs, used to select the correct menu below -->
-			<div class="menutabs">
+			<div id="menutabs">
 
-				<a class="allmenu" >
+				<a class="menuA" id="allmenu" >
 				All
 				</a >
-				<a class="Vinspirits">
+				<a class="menuA" id="Vinspirits">
 				Vinspirit
 				</a>
-				<a class="WhiskyMalts" >
+				<a class="menuA" id="WhiskyMalts" >
 				Whisky & Malt
 				</a>
-				<a class="Grappas">
+				<a class="menuA" id="Grappas">
 				Grappa
 				</a>
-				<a class="Brandys">
+				<a class="menuA" id="Brandys">
 				Brandy
 				</a>
-				<a class="Calvados">
+				<a class="menuA" id="Calvados">
 				Calvados
 				</a>
-				<a class="Cognacs">
+				<a class="menuA" id="Cognacs">
 				Cognac
 				</a>
-				<a class="Okryddadsprits">
+				<a class="menuA" id="Okryddadsprits">
 				Okryddadsprit
 				</a>
-				<a class="Kryddadsprits">
+				<a  class="menuA" id="Kryddadsprits">
 				Kryddad sprit
 				</a>
-				<a class="Ales">
+				<a class="menuA" id="Ales">
 				Ale
 				</a>
-				<a class="WhiskyGrains">
+				<a class="menuA" id="WhiskyGrains">
 				Whisky, Grain
 				</a>
 
 			</div>
-			</tr>
-			<tr>
+			
 			<div class="menuView" id="allfood">
 			</div>
 
@@ -115,8 +113,7 @@
 
 			<div class="menuView" id="WhiskyGrain">
 			</div>
-			</tr>
-			</table>
+			
 		</td>
 	</tr>
 
@@ -130,7 +127,7 @@
 			</h2>
 			<p class="order" id="o3" ondrop="drop(event)" ondragover="allowDrop(event)"> Order : 
 			</p>
-			<button onclick="pay()" > Pay </button> <button onclick="Edit()"> Edit </button>
+			<button onclick="pay(3)" > Pay </button> <button onclick="Edit()"> Edit </button>
 		</td>
 		<td class="tables" id="t4" >
 			<h1 class="tname">
@@ -141,7 +138,7 @@
 			</h2>
 			<p class="order" id="o4" ondrop="drop(event)" ondragover="allowDrop(event)"> Order :
 			</p>
-			<button onclick="Pay()" > Pay </button> <button> Edit </button>
+			<button onclick="pay(4)" > Pay </button> <button> Edit </button>
 		</td>
 	</tr>
 	<tr>
@@ -155,7 +152,7 @@
 	
 			<p class="order" id="o5" ondrop="drop(event)" ondragover="allowDrop(event)"> Order :<button id="supp"> X</button> </p>
 	 
-			<button onclick="pay()"> Pay </button> <button id="edit" onclick="edit()"> Edit </button>
+			<button onclick="pay(5)"> Pay </button> <button id="edit" onclick="edit()"> Edit </button>
 		</td>
 		<td class="tables" id="t6" id="t6" >
 			<h1 class="tname">
@@ -166,7 +163,7 @@
 			</h2>
 			<p class="order" id="o6" ondrop="drop(event)" ondragover="allowDrop(event)"> Order :
 			</p>
-			<button onclick="pay()"> Pay </button> <button> Edit </button>
+			<button onclick="pay(6)"> Pay </button> <button> Edit </button>
 		</td>
 	</tr>
 </table>

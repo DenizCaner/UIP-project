@@ -1,16 +1,21 @@
 #tableau{
 	background-color: #efefef;
 	width: 100%;
+	height: 80%;
 	border: black solid 10px;}
 
 td{
 	border: white solid 20px;
 	background-color: #efefef;
-	width =33%;
+	width:33%;
 	padding: 20px;
 }
 .tables{
 	width: 20%;
+	height : 10%;
+}
+.h1{
+	padding: 10px;
 }
 /*
 Definition of a standard button of the interface.
@@ -64,52 +69,49 @@ background-color: #ADD8E6;
 
 
 
-The menu tabs are actually list items in a refined horisontal list.
-*/
-ul#mtabs {
-    list-style: none;  /* Removes the bullet */
-}
-#mtabs li {
-    display: inline;  /* Makes the list horisontal */
-    
-}
+/*The menu tabs are actually list items in a refined horisontal list.*/
+
 .menu{
 width: 30%;
-position:top;}
-
-
-/* Add a black background color to the top navigation bar */
-.menutabs {
-	width: 100%;
-  position:top;
-  background-color: #e9e9e9;
+background-color: #7CFC00;
+}
+#menutabs{
+	width:100%;
 }
 
-
 /* Style the links inside the navigation bar */
-.menutabs a {
+#menutabs a {
+width :20%;
   float: left;
   display: block;
   color: black;
   text-align: center;
-  padding: 14px 16px;
+   height: 50px;
+  padding: 0px ;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 15px;
 }
 
 /* Change the color of links on hover */
-.menutabs a:hover {
+#menutabs a:hover {
   background-color: #ddd;
   color: black;
 }
 
 /* Style the "active" element to highlight the current page */
-.menutabs a.active {
+#menutabs a.active {
   background-color: #ddd;
   color: white;
 }
 
 .menuView{
+	
+	top: 100px;
 	width : 100%;
+}
+
+.menuA{
+	
+	width: 20%;
 }
 

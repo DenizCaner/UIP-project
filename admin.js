@@ -14,8 +14,8 @@ $(function() {
     $("#o3").hide();
     $("#o4").hide();
     $("#o5").hide();
-	$("#o6").hide();
-	$("#supp").hide();
+    $("#o6").hide();
+
 
     // Then we define the toggle function for clicking on the table. Each table is made to react differently on a click.
     //
@@ -39,7 +39,7 @@ $(function() {
     $("#t5").click(function () {
         $("#o5").toggle("slow");
     });
-	$("#t6").click(function () {
+    $("#t6").click(function () {
         $("#o6").toggle("slow");
     });
 });
@@ -58,23 +58,18 @@ function tableOrder (tableId) { // Returns the order number for the table with t
     return "#o"+ temp[2];
 }
 
-function pay() {
-  var txt;
-  int sum = sumTotal(
-  if (confirm("The client pay" + sum) {
-    txt = "";
-	$(orderTable(tempid) + " .tsum").text(0 + " kr.");
-  } else {
-    txt = "You pressed Cancel!";
-  }
-  document.getElementById("demo").innerHTML = txt;
+function pay(tempid){
+
+
+    var x = document.getElementById("o"+tempid);
+   // window.confirm("The Client pays his order "+x);
+    if (window.confirm("The Client pays his order "+x)) {
+        // the price is set to 0 for a new order
+        $("#t" +tempid+ " .tsum").text("0 kr.");
+        $("#o" +tempid).text("Order :");
+        //x.remove(x.selectedIndex);
+    }
 }
-
-function edit(){
-    $("#supp").toggle("slow");
-}
-
-
 // ===================================================================================================================
 // END OF FILE
 // ===================================================================================================================

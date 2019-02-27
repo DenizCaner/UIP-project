@@ -78,7 +78,7 @@ function getPrices (htmlString) {
 
     // We create a new jQuery object and put the HTML string into it.
     //
-    var el = $( '<div></div>' );
+    var el = $( '<div> <button id="supp"> X</button> </div>' );
     el.html(htmlString);
 
     // Then we can use jQuery to find all elements in this string.

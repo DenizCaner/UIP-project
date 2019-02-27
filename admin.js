@@ -15,6 +15,7 @@ $(function() {
     $("#o4").hide();
     $("#o5").hide();
 	$("#o6").hide();
+	$("#supp").hide();
 
     // Then we define the toggle function for clicking on the table. Each table is made to react differently on a click.
     //
@@ -56,6 +57,24 @@ function tableOrder (tableId) { // Returns the order number for the table with t
     temp = tableId.split("");
     return "#o"+ temp[2];
 }
+
+function pay() {
+  var txt;
+  int sum = sumTotal(
+  if (confirm("The client pay" + sum) {
+    txt = "";
+	$(orderTable(tempid) + " .tsum").text(0 + " kr.");
+  } else {
+    txt = "You pressed Cancel!";
+  }
+  document.getElementById("demo").innerHTML = txt;
+}
+
+function edit(){
+    $("#supp").toggle("slow");
+}
+
+
 // ===================================================================================================================
 // END OF FILE
 // ===================================================================================================================

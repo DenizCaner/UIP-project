@@ -10,7 +10,7 @@ td{
 	padding: 20px;
 }
 .tables{
-	width: 25%;
+	width: 20%;
 }
 /*
 Definition of a standard button of the interface.
@@ -73,12 +73,43 @@ ul#mtabs {
     display: inline;  /* Makes the list horisontal */
     
 }
-.menutest{
-background-color:#FFFFFF;
-width: 33%;
+.menu{
+width: 30%;
 position:top;}
 
-h1#mt{
-	position:top;
+
+/* Add a black background color to the top navigation bar */
+.menutabs {
+	width: 100%;
+  position:top;
+  background-color: #e9e9e9;
+}
+
+
+/* Style the links inside the navigation bar */
+.menutabs a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.menutabs a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the "active" element to highlight the current page */
+.menutabs a.active {
+  background-color: #ddd;
+  color: white;
+}
+
+.menuView{
+	width : 100%;
 }
 

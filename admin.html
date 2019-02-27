@@ -17,144 +17,158 @@
 <body>
 <div id="pubname"> The Flying Dutchman</div> 
 <table id="tableau" >
-<tr>
-<td class="tables" id="t1" >
-	<h1 class="tname">
-		Table 1
-	</h1>
-	<h2 class="tsum" >
-		0 kr
-	</h2>
-	<p class="order" id="o1"> Order : 
-	</p>
-	<button> Pay </button> <button> Edit </button>
-	</td>
-<td class="tables" id="t2" ondrop="drop(event)" ondragover="allowDrop(event)">
-<h1 class="tname">
-		Table 2
-	</h1>
-	<h2 class="tsum" >
-		0 kr
-	</h2>
-	<p class="order" id="o2"> Order : 
-	</p>
-	<button> Pay </button> <button> Edit </button>
-	</td>
-	<td rowspan="3" class="menutest" id="mt"> 
-		
-<!-- Menutabs, used to select the correct menu below -->
-
-<div id="menutabs">
-	<ul id="mtabs">
-		<li id="allfood">
-			All
-		</li>
-		<li id="Vinspirit">
-			Vinspirit
-		</li>
-		<li id="Whisky">
-			Whisky & Malt
-		</li>
-		<li id="Grappa">
-			Grappa
-		</li>
-		<li id="Brandy">
-			Brandy
-		</li>
-		<li id="Calvados">
-			Calvados
-		</li>
-		<li id="Cognac">
-			Cognac
-		</li>
-		<li id="Okryddadsprit">
-			Okryddadsprit
-		</li>
-		<li id="Kryddadsprit">
-			Kryddad sprit
-		</li>
-		<li id="Ale">
-			Ale
-		</li>
-		<li id="Whisky, Grain">
-			Whisky, Grain
-		</li>
-	</ul>
-</div>
-
-
-<!--
-The five menus are all placed on the same place on the screen. Placing them over each other
-gives the impression of switching between them. If we use the "slow" keyboard for the switching,
-the illusion will be even greater.
--->
-
-<div class="menu" id="allmenu">
-</div>
-
-<div class="menu" id="starter">
-
-</div>
-
-<div class="menu" id="main">
-</div>
-
-<div class="menu" id="dessert">
-</div>
-
-<div class="menu" id="drink">
-</div>
-	
-</tr>
-
-<tr>
-<td class="tables" id="t3" >
-	<h1 class="tname">
-		Table 3
-	</h1>
-	<h2 class="tsum">
-		0 kr
-	</h2>
-	<p class="order" id="o3" ondrop="drop(event)" ondragover="allowDrop(event)"> Order : 
-	</p>
-	<button> Pay </button> <button> Edit </button>
-</td>
-<td class="tables" id="t4" >
-	<h1 class="tname">
-		Table 4
-	</h1>
-	<h2 class="tsum">
-		0 kr
-	</h2>
-	<p class="order" id="o4" ondrop="drop(event)" ondragover="allowDrop(event)"> Order :
-	</p>
-	<button> Pay </button> <button> Edit </button>
+	<tr>
+		<td class="tables" id="t1" >
+			<h1 class="tname">
+			Table 1
+			</h1>
+			<h2 class="tsum" >
+			0 kr
+			</h2>
+			<p class="order" id="o1"> Order : 
+			</p>
+			<button onclick="pay()"> Pay </button> <button> Edit </button>
 		</td>
-</tr>
-<tr>
-<td class="tables" id="t5" id="t5" >
-	<h1 class="tname">
-		Table 5
-	</h1>
-	<h2 class="tsum">
-		0 kr
-	</h2>
-	<p class="order" id="o5" ondrop="drop(event)" ondragover="allowDrop(event)"> Order : 
-	</p>
-	<button> Pay </button> <button> Edit </button>
-</td>
-<td class="tables" id="t6" id="t6" >
-	<h1 class="tname">
-		Table 6
-	</h1>
-	<h2 class="tsum">
-		0 kr
-	</h2>
-	<p class="order" id="o6" ondrop="drop(event)" ondragover="allowDrop(event)"> Order :
-	</p>
-	<button> Pay </button> <button> Edit </button>
-</td>
-</tr>
+		<td class="tables" id="t2" ondrop="drop(event)" ondragover="allowDrop(event)">
+			<h1 class="tname">
+			Table 2
+			</h1>
+			<h2 class="tsum" >
+			0 kr
+			</h2>
+			<p class="order" id="o2"> Order : 
+			</p>
+			<button onclick="pay()"> Pay </button> <button> Edit </button>
+		</td>
+		<td rowspan="3" class="menu" id="mt"> 
+			<table> 
+			<tr>
+		<!-- Menutabs, used to select the correct menu below -->
+			<div class="menutabs">
+
+				<a class="allmenu" >
+				All
+				</a >
+				<a class="Vinspirits">
+				Vinspirit
+				</a>
+				<a class="WhiskyMalts" >
+				Whisky & Malt
+				</a>
+				<a class="Grappas">
+				Grappa
+				</a>
+				<a class="Brandys">
+				Brandy
+				</a>
+				<a class="Calvados">
+				Calvados
+				</a>
+				<a class="Cognacs">
+				Cognac
+				</a>
+				<a class="Okryddadsprits">
+				Okryddadsprit
+				</a>
+				<a class="Kryddadsprits">
+				Kryddad sprit
+				</a>
+				<a class="Ales">
+				Ale
+				</a>
+				<a class="WhiskyGrains">
+				Whisky, Grain
+				</a>
+
+			</div>
+			</tr>
+			<tr>
+			<div class="menuView" id="allfood">
+			</div>
+
+			<div class="menuView" id="Vinspirit">
+			</div>
+
+			<div class="menuView" id="WhiskyMalt">
+			</div>
+
+			<div class="menuView" id="Grappa">
+			</div>
+
+			<div class="menuView" id="Calvados">
+			</div>
+
+			<div class="menuView" id="Brandy">
+			</div>
+
+			<div class="menuView" id="Cognac">
+			</div>
+
+			<div class="menuView" id="Okryddadsprit">
+			</div>
+
+			<div class="menuView" id="Kryddadsprit">
+			</div>
+
+			<div class="menuView" id="Ale">
+			</div>
+
+			<div class="menuView" id="WhiskyGrain">
+			</div>
+			</tr>
+			</table>
+		</td>
+	</tr>
+
+	<tr>
+		<td class="tables" id="t3" >
+			<h1 class="tname">
+			Table 3
+			</h1>
+			<h2 class="tsum">
+			0 kr
+			</h2>
+			<p class="order" id="o3" ondrop="drop(event)" ondragover="allowDrop(event)"> Order : 
+			</p>
+			<button onclick="pay()" > Pay </button> <button onclick="Edit()"> Edit </button>
+		</td>
+		<td class="tables" id="t4" >
+			<h1 class="tname">
+			Table 4
+			</h1>
+			<h2 class="tsum">
+			0 kr
+			</h2>
+			<p class="order" id="o4" ondrop="drop(event)" ondragover="allowDrop(event)"> Order :
+			</p>
+			<button onclick="Pay()" > Pay </button> <button> Edit </button>
+		</td>
+	</tr>
+	<tr>
+		<td class="tables" id="t5" id="t5" >
+			<h1 class="tname">
+			Table 5
+			</h1>
+			<h2 class="tsum">
+			0 kr
+			</h2>
+	
+			<p class="order" id="o5" ondrop="drop(event)" ondragover="allowDrop(event)"> Order :<button id="supp"> X</button> </p>
+	 
+			<button onclick="pay()"> Pay </button> <button id="edit" onclick="edit()"> Edit </button>
+		</td>
+		<td class="tables" id="t6" id="t6" >
+			<h1 class="tname">
+			Table 6
+			</h1>
+			<h2 class="tsum">
+			0 kr
+			</h2>
+			<p class="order" id="o6" ondrop="drop(event)" ondragover="allowDrop(event)"> Order :
+			</p>
+			<button onclick="pay()"> Pay </button> <button> Edit </button>
+		</td>
+	</tr>
 </table>
 
 

@@ -30,7 +30,8 @@ function validateFormOnSubmit(theForm){
 
     for (i=0; i < DB.users.length; i++) {
         if ((userName == DB.users[i].username) && (password == DB.users[i].password)) {
-            window.open("C:/Projects/User%20Interface%20Programming/UIP-project/admin.html");
+            window.open("./vip_page.html");
+            window.close();
             return;
         }
     }

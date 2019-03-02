@@ -8,6 +8,8 @@
     <script type="text/javascript" src="jquery-1.11.1.js"></script>
     <script type="text/javascript" src="DBLoaded.js"></script>
     <script type="text/javascript" src="adminlogin.js"></script>
+    <script type="text/javascript" src="translations.js"></script>
+    <script type="text/javascript" src="translation.js"></script>
     <link rel="stylesheet" type="text/css" href="admin.css">
     <link rel="stylesheet" type="text/css" href="Vip-login.css">
     <link rel="stylesheet" type="text/css" href="adminlogin.css">
@@ -24,7 +26,7 @@ then you can enter javascript calls, to test the functions.
 -->
 
 	<div id="pubname">The Flying Dutchman</div>
-	<h2>Login in as an Admin here:</h2>
+	<h2 id="h2_admin"></h2>
 	<div class="logincontainer">
 		<form name="adminLogin" onsubmit="validateAdminFormOnSubmit(this)" method="post">
 			<input type="text" name="username" id="username" placeholder="Username" required>
@@ -34,7 +36,12 @@ then you can enter javascript calls, to test the functions.
 	</div>
 
 	<div>
-		<a id="return" href="./index.html">Return</a>
+		<a id="return" href="./index.html"></a>
+	</div>
+
+	<div class="footer">
+		<button class="eng">English</button>
+		<button class="swe">Svenska</button>
 	</div>
 
 

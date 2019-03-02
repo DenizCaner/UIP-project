@@ -1,5 +1,18 @@
-var DB2 = {
-    "spirits" : [{
+var weekly = []
+
+var food = [
+        {"name": "Apple Pie", "price": "30", "type":"dessert", "contains": ["gluten", "nuts"]},
+        {"name": "Pasta Carbonara", "price": "70", "type": "main"},
+        {"name": "Vegetable soup", "price": "45", "type": "starter"},
+        {"name": "Filet Mignon", "price": "115", "type": "main"},
+        {"name": "Pork Chops", "price": "65", "type": "main"},
+        {"name": "Fried Salmon", "price": "115", "type": "main"},
+        {"name": "Banana Split", "price": "30", "type": "dessert"},
+        {"name": "Chicken Wings", "price": "60", "type": "starter"},
+        {"name": "Garlic Bread", "price": "40", "type": "starter"},
+        ]
+
+var beverages = [{
     "nr": "10001",
     "articleid": "25053",
     "articletype": "100",
@@ -2500,4 +2513,4 @@ var DB2 = {
     "organic": "0",
     "kosher": "0"
 }]
-};
+

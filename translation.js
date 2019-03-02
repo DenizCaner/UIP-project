@@ -2,8 +2,12 @@
 db = trans.translations;
 
 $(document).ready(function(){
-	if (localStorage.getItem("lang") == null){
+	if ((localStorage.getItem("lang") == null) || (localStorage.getItem("lang") == "en")) {
 		localStorage.setItem("lang", "en");
+		$(".eng").addClass("chosen");
+	}
+	else {
+		$(".swe").addClass("chosen");
 	}
 
 	$(".eng").click(function(){
@@ -15,14 +19,14 @@ $(document).ready(function(){
 		localStorage.setItem("lang", "se");
 		location.reload();
 	});
-});
 
-function translation (id) {
 	var language = localStorage.getItem("lang");
 
 	for (var i = 0; i < db.length; i++) {
-		if (db[i].key == id) {
-			document.getElementById(id).innerHTML = db[i][language];
+		if (document.getElementById(db[i].key) == undefined) {
+		}
+		else {
+			document.getElementById(db[i].key).innerHTML = db[i][language];
 		}
 	}
-}
+});

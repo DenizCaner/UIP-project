@@ -3,11 +3,14 @@
 
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8">
 	
 	<title>The Flying Dutchman</title>
 	
-	<script type="text/javascript" src="jquery-1.11.1.js"></script>
+	<script language="JavaScript" type="text/javascript" src="jquery-1.11.1.js"></script>
 	<script type="text/javascript" src="customer.js"></script>
+	<script language="Javascript" type="text/Javascript" src="translations.js"></script>
+	<script language="Javascript" type="text/Javascript" src="translation.js"></script>
 	
 	<link rel="stylesheet" type="text/css" href="customer.css">
 
@@ -16,22 +19,22 @@
 
 <body>
 
-	<div id="pubname"> The Flying Dutchman
+	<div id="title" class="pubname">The Flying Dutchman
 		<input type="text" placeholder="Search..">
-		<button type="button" id = "vipLogin" >Log In</button>
+		<button type="button" id = "vipLogin" ></button>
 	</div>
 
 	<div class="page">
 		
-		<div class="pageElements weeklyHeader"> Weekly Recommendations </div>
+		<div class="pageElements weeklyHeader" id="recommendations"></div>
 		<div class="pageElements weekly"> </div>
 
 		<div id="menutabs">
     		<ul id="mtabs">
-        		<li id="beers"> Beer </li>
-        		<li id="whiskys"> Whisky </li>
-        		<li id="sprits"> Sprit </li>
-        		<li id="alcoholFrees"> Alcohol Free </li>
+        		<li id="beers"></li>
+        		<li id="whiskys"></li>
+        		<li id="sprits"></li>
+        		<li id="alcoholFrees"></li>
     		</ul>
 		</div>
 
@@ -43,12 +46,15 @@
 
 		<div class="menu" id="alcoholFree"> </div>
 
-		<div class="pageElements foodMenuHeader"> Food Menu</div>
+		<div class="pageElements foodMenuHeader" id="foodMenu"></div>
 		<div class="pageElements foodMenu"></div>
 
 	</div>
 
 	<div class="footer">Contact Us</div>
-
+	<div class="footer">
+		<button class="eng">English</button>
+		<button class="swe">Svenska</button>
+	</div>
 </body>
 </html>

@@ -42,19 +42,24 @@ var trans = {
         "se" : "Sprit"
     },
     {
-        "key" : "alcoholFrees",
-        "en" : "Alcohol Free",
-        "se" : "Alkoholfritt"
+        "key" : "starters",
+        "en" : "Starters",
+        "se" : "Förrätter"
     },
     {
-        "key" : "foodMenu",
-        "en" : "Food Menu",
-        "se" : "Matmeny"
+        "key" : "maincourses",
+        "en" : "Main Courses",
+        "se" : "Huvudrätter"
     },
     {
-        "key" : "h2_admin",
-        "en" : "Login in as an employee here:",
-        "se" : "Logga in som anställd här:"
+        "key" : "desserts",
+        "en" : "Desserts",
+        "se" : "Desserter"
+    },
+    {
+        "key" : "h2_login",
+        "en" : "Login in here:",
+        "se" : "Logga in här:"
     },
     {
         "key" : "return",

@@ -75,6 +75,7 @@
     border-style: solid;
     border-color: #556B2F;
     padding: 5px;
+    overflow-y:scroll;
 }
 
 #foodmenutabs {
@@ -98,6 +99,7 @@
     border-style: solid;
     border-color: #556B2F;
     padding: 5px;
+    overflow-y:scroll;
 }
 
 #beveragesmenutabs {

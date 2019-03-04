@@ -65,5 +65,50 @@ var trans = {
         "key" : "return",
         "en" : "Return",
         "se" : "Återvänd"
-    }]
+    },
+    {
+        "key" : "table1",
+        "en" : "Table 1",
+        "se" : "Bord 1"
+    },
+    {
+        "key" : "table2",
+        "en" : "Table 2",
+        "se" : "Bord 2"
+    },
+    {
+        "key" : "table3",
+        "en" : "Table 3",
+        "se" : "Bord 3"
+    },
+    {
+        "key" : "table4",
+        "en" : "Table 4",
+        "se" : "Bord 4"
+    },
+    {
+        "key" : "table5",
+        "en" : "Table 5",
+        "se" : "Bord 5"
+    },
+    {
+        "key" : "table6",
+        "en" : "Table 6",
+        "se" : "Bord 6"
+    },
+    {
+        "key" : "order",
+        "en" : "Order: ",
+        "se" : "Beställning: "
+    },
+    {
+        "key" : "pay",
+        "en" : "Pay",
+        "se" : "Betala"
+    },
+    {
+        "key" : "edit",
+        "en" : "Edit",
+        "se" : "Ändra"
+    },]
 }

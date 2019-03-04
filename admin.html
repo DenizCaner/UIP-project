@@ -6,7 +6,8 @@
 	
 	<script language="JavaScript" type="text/javascript" src="jquery-1.11.1.js"></script>
 	<script type="text/javascript" src="beer-eng.js"></script>
-	
+	<script type="text/javascript" src="menu.js"></script>
+	<script type="text/javascript" src="stack.js"></script>
 	<script language="JavaScript" type="text/javascript" src="admin.js"></script>
 	<script language="JavaScript" type="text/javascript" src="drop.js"></script>
 	<script language="JavaScript" type="text/javascript" src="menuhandler.js"></script>
@@ -21,7 +22,7 @@
 <div id="pubname"> The Flying Dutchman</div> 
 <table id="tableau" >
 	<tr>
-		<td class="tables" id="t1" >
+		<td class="tables" id="t1" ondrop="drop(event)" ondragover="allowDrop(event)">
 			<h1 id="table1" class="tname">
 			Table 1
 			</h1>
@@ -49,82 +50,34 @@
 		<!-- Menutabs, used to select the correct menu below -->
 			<div class="menutabs">
 
-				<a class="allmenu" >
-				All
+				<a class="beers" >
+				Beer
 				</a >
-				<a class="Vinspirits">
-				Vinspirit
+				<a class="whiskys">
+				Whisky
 				</a>
-				<a class="WhiskyMalts" >
-				Whisky & Malt
+				<a class="sprits" >
+				Sprit
 				</a>
-				<a class="Grappas">
-				Grappa
-				</a>
-				<a class="Brandys">
-				Brandy
-				</a>
-				<a class="Calvados">
-				Calvados
-				</a>
-				<a class="Cognacs">
-				Cognac
-				</a>
-				<a class="Okryddadsprits">
-				Okryddadsprit
-				</a>
-				<a class="Kryddadsprits">
-				Kryddad sprit
-				</a>
-				<a class="Ales">
-				Ale
-				</a>
-				<a class="WhiskyGrains">
-				Whisky, Grain
-				</a>
-
 			</div>
 			</tr>
 			<tr>
-			<div class="menuView" id="allfood">
+			<div class="menuView" id="beer">
 			</div>
 
-			<div class="menuView" id="Vinspirit">
+			<div class="menuView" id="whisky">
 			</div>
 
-			<div class="menuView" id="WhiskyMalt">
+			<div class="menuView" id="sprit">
 			</div>
 
-			<div class="menuView" id="Grappa">
-			</div>
-
-			<div class="menuView" id="Calvados">
-			</div>
-
-			<div class="menuView" id="Brandy">
-			</div>
-
-			<div class="menuView" id="Cognac">
-			</div>
-
-			<div class="menuView" id="Okryddadsprit">
-			</div>
-
-			<div class="menuView" id="Kryddadsprit">
-			</div>
-
-			<div class="menuView" id="Ale">
-			</div>
-
-			<div class="menuView" id="WhiskyGrain">
-			</div>
 			</tr>
 			</table>
 		</td>
 	</tr>
 
 	<tr>
-		<td class="tables" id="t3" >
+		<td class="tables" id="t3" ondrop="drop(event)" ondragover="allowDrop(event)">
 			<h1 id="table3" class="tname">
 			Table 3
 			</h1>
@@ -135,7 +88,7 @@
 			</p>
 			<button onclick="pay()" > Pay </button> <button onclick="Edit()"> Edit </button>
 		</td>
-		<td class="tables" id="t4" >
+		<td class="tables" id="t4" ondrop="drop(event)" ondragover="allowDrop(event)">
 			<h1 id="table4" class="tname">
 			Table 4
 			</h1>
@@ -148,7 +101,7 @@
 		</td>
 	</tr>
 	<tr>
-		<td class="tables" id="t5" id="t5" >
+		<td class="tables" id="t5" id="t5" ondrop="drop(event)" ondragover="allowDrop(event)">
 			<h1 id="table5" class="tname">
 			Table 5
 			</h1>
@@ -160,7 +113,7 @@
 	 
 			<button onclick="pay()"> Pay </button> <button id="edit" onclick="edit()"> Edit </button>
 		</td>
-		<td class="tables" id="t6" id="t6" >
+		<td class="tables" id="t6" id="t6" ondrop="drop(event)" ondragover="allowDrop(event)">
 			<h1 id="table6" class="tname">
 			Table 6
 			</h1>

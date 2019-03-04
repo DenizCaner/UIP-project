@@ -31,8 +31,8 @@ Definition of a standard button of the interface.
     text-align: center;
     font-size: 2.5em;
     background: #556B2F;
-	font-family: Old English Text MT;
-	font-weight: bold;
+	  font-family: Old English Text MT;
+	  font-weight: bold;
     color: navajowhite;
     padding: 10px;
     border: groove 5px ghostwhite;

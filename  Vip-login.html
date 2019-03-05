@@ -3,40 +3,41 @@
 <head>
 	<meta charset="UTF-8">
 	<title>VIP login page</title>
+  <link rel="stylesheet" type="text/css" href="main.css">
 	<link rel="stylesheet" type="text/css" href="Vip-login.css">
   <script type="text/javascript" src="jquery-1.11.1.js"></script>
   <script type="text/javascript" src="DBLoaded.js"></script>
   <script type="text/javascript" src="adminlogin.js"></script>
+  <script type="text/javascript" src="translations.js"></script>
+  <script type="text/javascript" src="translation.js"></script>
 </head>
 <body>
 	<header>
 		<div class="pubname">The Flying Dutchman</div>
 	</header>
 	
-<h2>Please Log in here:</h2>
+  <h2 id="h2_login"></h2>
 
-<!--This is a form to fill the log-in information-->
+  <!--This is a form to fill the log-in information-->
+  <div class="logincontainer">
+    <div class="innerLoginContainer">
+      <form name="VIPLogin" onsubmit="validateFormOnSubmit(this)" method="post">
+        <div class="container">
+          <label for="uname"><b>Username</b></label>
+          <input type="text" placeholder="Enter Username" id="username" name="uname" required>
 
-<form name="VIPLogin" onsubmit="validateFormOnSubmit(this)" method="post">
-
-  <div class="container">
-    <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" id="username" name="uname" required>
-
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" id="password" name="psw" required>
-        
-    <button type="submit">Login</button>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
+          <label for="psw"><b>Password</b></label>
+           <input type="password" placeholder="Enter Password" id="password" name="psw" required>
+                
+          <button type="submit">Login</button>
+        </div>
+      </form>
+    </div>
   </div>
 
-  <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn">Cancel</button>
-    <span class="psw">Forgot <a href="#">password?</a></span>
+  <div class="footer">
+      <button class="eng">English</button>
+      <button class="swe">Svenska</button>
   </div>
-</form>
-
 
 </body>

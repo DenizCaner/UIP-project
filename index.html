@@ -1,16 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<meta charset="utf-8">
 	<title>The Flying Dutchman</title>
+
+	<script language="JavaScript" type="text/javascript" src="jquery-1.11.1.js"></script>
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<script language="Javascript" type="text/Javascript" src="translations.js"></script>
+	<script language="Javascript" type="text/Javascript" src="translation.js"></script>
 </head>
 <body>
-	<div class="pagetitle">
-		<h1>Welcome to the Flying Dutchman!</h1>
-		<h2>Choose on of the below to proceed.</h2>
+	
+	<div id="welcome" class="pubname"></div>
+	<div class=welcomeContainer>	
+		<h2 id="h2"></h2>
+		<div class="linkContainer">
+			<span class="link"><a id="linkEmp" href="adminLogin.html"></a></span>
+			<span class="link"><a id="linkCust" href="customer.html"></a></span>
+		</div>
 	</div>
-	<div class="container">
-		<a href="adminLogin.html">Employee</a>
-		<a href="customer.html">Customer</a>
+	<div class="footer">
+		<button class="eng">English</button>
+		<button class="swe">Svenska</button>
 	</div>
 </body>
 </html>

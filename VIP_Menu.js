@@ -1,5 +1,7 @@
-var DB2 = {
-    "spirits" : [{
+/* here we conver the json data into a local js file */
+
+var data = 
+[{
     "nr": "10001",
     "articleid": "25053",
     "articletype": "100",
@@ -2500,4 +2502,82 @@ var DB2 = {
     "organic": "0",
     "kosher": "0"
 }]
-};
+
+ 
+/* this function help to transfer JSON data to html and loop it */
+
+window.onload=function(){
+
+    for(var i=0; i<data.length; i++){
+
+
+        $('#beverage_list').append(" <li class=\"list_collection\"><div class=\"beverage_card\"><div class=\"beverage_img\"></div><div class=\"beverage_name\"><span class=\"name_data\" id=\"beer_name\">" +
+             data[i].name + "</span><span \n" +
+            "class=\"type\">" + 
+            " "+ data[i].catgegory + 
+            "</span></div><div class=\"year\"><p>" +
+             "Year:" + " " + data[i].introduced + 
+             "</p></div><div class=\"price\"><p>" + data[i].priceinclvat + " " + "Kr" +
+             "</p></div><div class=\"volume\"><p>" + data[i].alcoholstrength + " " + "alcohol" +
+             "</p></div><div class=\"toolBar\"><button class=\"normalbutton\">Add to shopping cart</button></div></div></li>");
+        
+    
+    }
+
+    let filterInput = document.getElementById("myInput");
+    filterInput.addEventListener('keyup', filterBeers);
+    function filterBeers(){
+        // Get value of Input
+        let filterValue = document.getElementById("myInput").value.toLowerCase();
+        // Get names ul #beverage_list
+        let ul = document.getElementById("beverage_list");
+        // Get lists from ul
+        let li = ul.querySelectorAll("li.list_collection");
+        // Loop through list_collection List
+        for (let i = 0; i < li.length; i++){
+            //console.log(li[i].getElementsByTagName('span')[0].innerHTML);
+            let beer_name = li[i].getElementsByTagName('span')[0]
+            // if matched
+            if(beer_name.innerHTML.toLowerCase().indexOf(filterValue) > -1){
+                li[i].style.display = '';
+            } else {
+                li[i].style.display = 'none';
+            }   
+        }
+    }
+
+/* this is the Jquery and DOM of "go to top" button */    
+    
+    $("#topArrow").click(function(){
+    $(document).scrollTop(0);
+    })
+
+
+
+    var topArrow=document.getElementById('topArrow');
+        topArrow.onclick=function(){
+        document.scrollTop = document.body.scrollTop =0;
+    }
+
+}
+
+/* this is the search bar with filter function; the following codes shown in VIP_Menu.html file
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for beverage.." title="Type in a name">   
+</div> 
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

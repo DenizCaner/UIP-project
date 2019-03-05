@@ -1,0 +1,12 @@
+body {
+	background-image: url("./background_image.jpg");
+    background-size: cover;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 5em;
+    color: navajowhite;
+    font-family: Old English Text MT;
+    font-size: 2em;
+}

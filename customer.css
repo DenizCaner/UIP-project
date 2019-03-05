@@ -1,5 +1,5 @@
 
-#pubname {
+.pubname {
     position: relative;
     width: 100%;
     text-align: center;
@@ -38,7 +38,7 @@
   top:15px;
 }
 
-/* Weeklu Recommendations */
+/* Weekly Recommendations */
 .weeklyHeader {
     box-sizing: border-box;
     position: absolute;
@@ -62,33 +62,32 @@
     border-color: #556B2F;
 }
 
-.foodMenuHeader {
-    box-sizing: border-box;
-    position: absolute;
-    top: 59%;
-    width: 45%;
-    list-style: none
-    padding: 4px;
-    background-color: #556B2F;
-    color: navajowhite;
-}
+/*Food menu*/
 
-.foodMenu {
+.foodmenu {
     box-sizing: border-box;
     position: absolute;
-    top:62%;
     width: 45%;
     height: 30%;
-    background-color: lightgrey; 
+    top:62%;
+    background-color: lightgrey;
     border: 10px;
     border-style: solid;
     border-color: #556B2F;
+    padding: 5px;
+    overflow-y:scroll;
 }
 
-/*
-The common definition of the menus.
-*/
-.menu {
+#foodmenutabs {
+    box-sizing: border-box;
+    position: absolute;
+    top: 57%;
+    width: 45%;
+}
+
+/* Beverages menu*/
+
+.beveragesmenu {
     box-sizing: border-box;
     position: absolute;
     width: 45%;
@@ -100,12 +99,10 @@ The common definition of the menus.
     border-style: solid;
     border-color: #556B2F;
     padding: 5px;
+    overflow-y:scroll;
 }
 
-/*
-Individual menu styles =============================
-*/
-#menutabs {
+#beveragesmenutabs {
     box-sizing: border-box;
     position: absolute;
     top: 12%;

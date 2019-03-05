@@ -21,6 +21,15 @@
 }
 
 
+.account {
+    margin:auto;
+    width: 25%;
+    padding: 12px 12px 12px 12px;
+    margin-top:15px;
+    width:40%;
+    
+}
+
 #myInput {
     margin-left: auto;
     margin-right: auto;
@@ -115,8 +124,6 @@
 	}
 
 
-
-
     /* This is the style of the "go to top" button */
     .top{
     width: 50px;
@@ -125,13 +132,13 @@
     border-radius: 10px;
     position: fixed;
     right: 100px;
-    bottom: 40%;
+    bottom: 10%;
     }
 
     .top #topArrow{
     width: 30px;
     height: 30px;
-    border-top: 2px solid #fff;
+    border-top: 2px solid #fff; /*draw the arror*/
     border-left: 2px solid #fff;
     display: inline-block;
     transform: translate(9px,35px) rotate(45deg);
@@ -142,4 +149,61 @@
     .top #topArrow:hover{
     border-width: 4px;
     }
+
+/* here is the style of the shopping cart */
+
+.shopping-cart {
+  position: fixed;
+  top: 80px;
+  right: 0;
+  width: 300px;
+  min-heigh: 300px;
+  margin-right: 20px;
+  margin-top: 10px;
+  padding: 20px;
+  background: #ebebe0;
+}
+
+.shopping-cart-head {
+  background: #0066cc;
+  color: white;
+  padding: 5px;
+}
+
+.shopping-cart,
+.shopping-cart-head {
+  border-radius: 5px;
+}
+
+.empty-cart-btn,
+.cart-checkout {
+  display: none;
+  
+}
+
+.empty-cart-btn {
+  margin-bottom: 5px;
+  color: tomato;
+}
+
+.cart-checkout {
+  background: #556B2F;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

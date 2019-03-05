@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script type="text/javascript" src="VIP_Menu.js"></script>
     <script type="text/javascript" src="jquery-1.11.1.js"></script>
+    <!-- 加一行DBLoaded.js -->
+    <script type="text/javascript" src="DBLoaded.js"></script>
+    <script type="text/javascript" src="sessionStorage.js"></script>
     <link rel="stylesheet" type="text/css" href="VIP_Menu.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Menu for VIP</title>
@@ -23,6 +26,18 @@
 
 <body>
 
+    <div class="account"> 
+
+    
+<!--Here we implement the account information from the localStorage(user info) and sessionStorage(user id + credit) -->
+
+    <script>
+        document.write("Welcome, " + localStorage.getItem('username') + "! "); 
+        document.write("Your Credit: " + userSEK + "Kr");
+    </script>
+
+    </div>
+
 <div>
     <ul id="beverage_list"></ul>
 </div>
@@ -34,6 +49,23 @@
     <span title="Top" id="topArrow"></span>
 </div>
 
+<!--here we add a "shopping cart" container-->
+
+ 
+<div class="shopping-cart">
+    <div class="shopping-cart-head">
+        <span class="product-quantity">0</span> Beverage(s) in Cart
+      </div>
+      
+      <ul class="shopping-cart-list">
+      </ul>
+      
+      <div class="cart-buttons">
+        <a href="#0" class="button empty-cart-btn">Empty all items</a>
+        <a href="#0" class="button cart-checkout">Checkout - Total: <span class="total-price">0 Kr</span></a>
+      </div>
+    
+</div>
 
 
 

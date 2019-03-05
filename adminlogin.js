@@ -24,13 +24,14 @@ function validateAdminFormOnSubmit(theForm){
 function validateFormOnSubmit(theForm){
 
     var userName = document.getElementById('username').value;
+    // 存储 userName
+    window.localStorage.setItem('username',userName);
     var password = document.getElementById('password').value;
-
     var i;
 
     for (i=0; i < DB.users.length; i++) {
         if ((userName == DB.users[i].username) && (password == DB.users[i].password)) {
-            window.open("./vip_page.html");
+            window.open("./VIP_Menu.html");
             window.close();
             return;
         }

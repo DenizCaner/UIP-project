@@ -280,29 +280,22 @@ sessionStorage.setItem ('Balance', JSON.stringify(userInfo));
 var userJsonStr = JSON.parse(sessionStorage.getItem('Balance'));
 
 
-//console.log("user_id");
-
-/*for (var i=0; i < DB.users.length; i++) {
-        console.log(DB.users[i].user_id);
-        console.log(DB.users[i].username);
-    } */
-//console.log(userJsonStr);
-//console.log(DB);
-
-// 通过 username 在 DB 中找到对应的user_id，存入 getUserId
+//  filter the user_id according username from the DB and, store them into "getUserId"
 var filterName = DB.users.filter(function(i) {
-    // window.localStorage.getItem('username') 来自于 adminlogin.js 中存储的userName
+
+    // window.localStorage.getItem('username') from the userName stored into adminlogin.js 
   return i.username === window.localStorage.getItem('username')
 });
+
 getUserId = filterName[0].user_id;
 
-// 通过此 getUserId  找到 userJsonStr 中的user，存入 filterUserId
+// through "getUserId", find the "user" from userJsonStr，and store them into filterUserId
 var filterUserId = userJsonStr.filter(function(i){
     return i.user_id === getUserId;
 })
-// 通过 filterUserId 找到 对应的 creditSEK
+//through filterUserId, find the according creditSEK
 userSEK = filterUserId[0].creditSEK;
-// 输出 username，userSEK
+// output username，userSEK
 console.log(userSEK,window.localStorage.getItem('username'));
 
 

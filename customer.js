@@ -2,7 +2,7 @@ $(function () {
 
 
     $("#beer").show();
-    $("#whiskey").hide();
+    $("#whisky").hide();
     $("#sprit").hide();
 
     $("#starter").show();
@@ -103,7 +103,7 @@ function categorizeBeverages(type, arr) {
         // Otherwise we skip to the next item.
         //
         if (arr[i].catgegory == type) {
-            out += '<div id="' + "menuitem" + i + '" draggable="true" ondragstart="drag(event)">' + arr[i].name + ' <span class="price">' + arr[i].price + '</span></div>';
+            out += '<div id="' + "menuitem" + i + '" draggable="true" ondragstart="drag(event)">' + arr[i].name+ ' <span class="price">' + arr[i].price + '</span></div>';
         }
     }
     // Once we are finished we return the resulting HTML string containing all the menu items for the desired menu.

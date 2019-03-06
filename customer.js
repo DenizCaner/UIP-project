@@ -53,6 +53,8 @@ $(function () {
     // Here we put the different kinds of food into the respective menus.
     //
     $(categorizeBeverages("\u00c3\u2013l, Ale", beverages)).appendTo("#beer");
+    $(categorizeBeverages("\u00c3\u2013l, Porter och Stout", beverages)).appendTo("#beer");
+    $(categorizeBeverages("\u00c3\u2013l, M\u00c3\u00b6rk lager", beverages)).appendTo("#beer");
     $(categorizeBeverages("Whisky, Malt", beverages)).appendTo("#whisky");
     $(categorizeBeverages("Whisky, Grain", beverages)).appendTo("#whisky");
     $(categorizeBeverages("Whisky , Blended", beverages)).appendTo("#whisky");
@@ -103,7 +105,7 @@ function categorizeBeverages(type, arr) {
         // Otherwise we skip to the next item.
         //
         if (arr[i].catgegory == type) {
-            out += '<div id="' + "menuitem" + i + '" draggable="true" ondragstart="drag(event)">' + arr[i].name+ ' <span class="price">' + arr[i].price + '</span></div>';
+            out += '<div id="' + "menuitem" + i + '" draggable="true" ondragstart="drag(event)">' + arr[i].name+ ' <span class="price">' + arr[i].priceinclvat + '</span></div>';
         }
     }
     // Once we are finished we return the resulting HTML string containing all the menu items for the desired menu.

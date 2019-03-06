@@ -1,33 +1,3 @@
-
-.pubname {
-    position: relative;
-    width: 100%;
-    text-align: center;
-    font-size: 2.5em;
-    background: #556B2F;
-    font-family: Old English Text MT;
-    font-weight: bold;
-    color: navajowhite;
-    padding: 10px;
-    border: groove 5px ghostwhite;
-    box-sizing: border-box;
-}
-
-/* Search bar */
-
-.pubname input[type=text] {
-  float: right;
-  box-sizing: border-box;
-  position: absolute;
-  right: 20%;
-  padding: 6px;
-  border: none;
-  margin-top: 8px;
-  margin-right: 16px;
-  font-size: 17px;
-  box-sizing: border-box;
-}
-
 .page {
   background: #eaeaed;
 }

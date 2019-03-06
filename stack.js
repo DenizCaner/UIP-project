@@ -16,13 +16,13 @@ push(element)
 
 
 // pop function 
-pop() 
+/*pop()
 { 
     // return top most element in the stack and removes it from the stack if the stack is not empty
     if (this.items.length == 0) 
-        return "Underflow"; 
-    return this.items.pop(); 
-}
+        //return "Underflow";
+   // return this.items.pop();
+}*/
 
 // isEmpty function 
 isEmpty() 

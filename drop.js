@@ -6,6 +6,7 @@
 // as it is. It will prevent the default behaviour, which is not to accept
 // any drops.
 //
+var inc=0;
 function allowDrop(ev) {
     ev.preventDefault(); // This makes the item accept drop actions.
 }
@@ -42,9 +43,8 @@ function drop(ev) {
     //
     var nodeCopy = document.getElementById(data).cloneNode(true);
 
-    nodeCopy.id = "newId";  // We cannot use the same ID. Ideally we should generate the new ID with a
-                            // random or incremental number. This is left as an exercise...
-                            //
+    nodeCopy.id = "newId"+inc;  // We cannot use the same ID. Ideally we should generate the new ID with a
+     inc++;                       // random or incremental number.
 
     nodeCopy.draggable = "false"; // The new element is set as being not draggable.
 
@@ -69,7 +69,7 @@ function drop(ev) {
     // Replace the content of the order with the new sum
     //
     $(orderTable(tempid) + " .tsum").text(sum + " kr.");
-
+    $(orderTable(tempid)+" .supp").show();
 }
 
 // Get the list of prices from all the currentorders.
@@ -78,7 +78,7 @@ function getPrices (htmlString) {
 
     // We create a new jQuery object and put the HTML string into it.
     //
-    var el = $( '<div> <button id="supp"> X</button> </div>' );
+    var el = $( '<div> </div>' );
     el.html(htmlString);
 
     // Then we can use jQuery to find all elements in this string.

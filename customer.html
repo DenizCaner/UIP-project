@@ -17,7 +17,16 @@
 	<link rel="stylesheet" type="text/css" href="main.css">
 	<link rel="stylesheet" type="text/css" href="customer.css">
 	
-	
+	<style>
+		body {
+			font-family: Times New Roman;
+		}
+
+		* {
+			box-sizing: border-box;
+		}
+
+	</style>
 
 </head>
 
@@ -28,44 +37,55 @@
 		<button type="button" id = "return" onclick="location.href = 'index.html';"></button>
 	</div>
 
-	<div class="page">
+	<div class="Mainbody">
 		
-		<div class="pageElements weeklyHeader" id="recommendations"></div>
-		<div class="pageElements weekly"> </div>
+		<div class="foodmenucontainer">
+			<div id="foodmenutabs">
+    			<ul id="mtabs">
+        			<li id="starters"></li>
+        			<li id="maincourses"></li>
+        			<li id="desserts"></li>
+    			</ul>
+			</div>
 
-		<div id="beveragesmenutabs">
-    		<ul id="mtabs">
-    			<li id="beers"></li>
-        		<li id="whiskys"></li>
-        		<li id="sprits"></li>
-    		</ul>
+			<div class="foodmenu" id="starter"></div>
+
+			<div class="foodmenu" id="maincourse"></div>
+
+			<div class="foodmenu" id="dessert"></div>
 		</div>
 
-		<div class="beveragesmenu" id="beer"> </div>
 
-		<div class="beveragesmenu" id="whisky"> </div>
+		<div class="beveragesmenucontainer">
+			<div id="beveragesmenutabs">
+    			<ul id="mtabs">
+    				<li id="beers"></li>
+        			<li id="whiskys"></li>
+        			<li id="sprits"></li>
+    			</ul>
+			</div>
 
-		<div class="beveragesmenu" id="sprit"> </div>
 
+			<div class="beveragesmenu" id="beer"> </div>
 
-		<div id="foodmenutabs">
-    		<ul id="mtabs">
-        		<li id="starters"></li>
-        		<li id="maincourses"></li>
-        		<li id="desserts"></li>
-    		</ul>
+			<div class="beveragesmenu" id="whisky"> </div>
+
+			<div class="beveragesmenu" id="sprit"> </div>
+
 		</div>
 
-		<div class="foodmenu" id="starter"></div>
+		
+		<div class="weeklycontainer">
 
-		<div class="foodmenu" id="maincourse"></div>
-
-		<div class="foodmenu" id="dessert"></div>
-
-	</div>
-	<div class="footer">
+			<div class="weeklyHeader" id="recommendations"></div>
+			<div class="weekly"> </div>
+		</div>
+		
+		<div class="footer">
 		<button class="eng">English</button>
 		<button class="swe">Svenska</button>
 	</div>
+	</div>
+	
 </body>
 </html>

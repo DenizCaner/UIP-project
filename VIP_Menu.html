@@ -12,6 +12,11 @@
     <script type="text/javascript" src="sessionStorage.js"></script>
     <link rel="stylesheet" type="text/css" href="VIP_Menu.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Scripts for translation -->
+    <script type="text/javascript" src="translations.js"></script>
+    <script type="text/javascript" src="translation.js"></script>
+
     <title>Menu for VIP</title>
 </head>
 
@@ -31,10 +36,13 @@
 
     
 <!--Here we implement the account information from the localStorage(user info) and sessionStorage(user id + credit) -->
-
+    <span id="accountWelcome">Welcome, </span>
     <script>
-        document.write("Welcome, " + localStorage.getItem('username') + "! "); 
-        document.write("Your Credit: " + userSEK + "Kr");
+        document.write(localStorage.getItem('username') + "! ");
+    </script>
+    <span id="accountCredit">Your Credit is: </span>
+    <script>
+        document.write(userSEK + "Kr");
     </script>
 
     </div>
@@ -55,7 +63,7 @@
  
 <div class="shopping-cart">
     <div class="shopping-cart-head">
-        <span class="product-quantity">0</span> Beverage(s) in Cart
+        <span class="product-quantity">0</span><span id="beveragesInCart"></span>
       </div>
       
       <ul class="shopping-cart-list">
@@ -104,6 +112,12 @@
 </div>
 
 -->
+
+    <div class="footer">
+        <button class="eng">English</button>
+        <button class="swe">Svenska</button>
+        <button class="left" id="logOut" onclick="location.href = './customer.html';"></button>
+    </div>
 
 </body>
 </html>

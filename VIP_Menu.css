@@ -193,8 +193,34 @@
   padding: 10px;
 }
 
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    text-align: left;
+}
 
+.footer button {
+    background-color: black;
+    border: none;
+    color: navajowhite;
+    font-size: 1em;
+    margin: 0.5em 2em;
+}
 
+.chosen {
+    text-decoration: underline;
+}
+
+.footer button:hover {
+    opacity: 0.5;
+}
+
+.footer .left {
+    float: right;
+}
 
 
 

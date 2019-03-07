@@ -17,7 +17,7 @@ var trans = {
         "se" : "Kund"
     },
     {
-        "key" : "vipLogin",
+        "key" : "login",
         "en" : "Log in",
         "se" : "Logga in"
     },
@@ -110,5 +110,25 @@ var trans = {
         "key" : "edit",
         "en" : "Edit",
         "se" : "Ändra"
-    },]
+    },
+    {
+        "key" : "beveragesInCart",
+        "en" : " Beverage(s) in cart",
+        "se" : " Dryck(er) i kundvagnen"
+    },
+    {
+        "key" : "accountWelcome",
+        "en" : "Welcome, ",
+        "se" : "Välkommen, "
+    },
+    {
+        "key" : "accountCredit",
+        "en" : "Your Credit is: ",
+        "se" : "Du har: "
+    },
+    {
+        "key" : "logOut",
+        "en" : "Log out",
+        "se" : "Logga ut"
+    }]
 }

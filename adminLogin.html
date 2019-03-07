@@ -4,17 +4,21 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Database Base Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The Flying Dutchman</title>
+
     <script type="text/javascript" src="jquery-1.11.1.js"></script>
     <script type="text/javascript" src="DBLoaded.js"></script>
     <script type="text/javascript" src="adminlogin.js"></script>
+
+    <!-- Scripts for translation -->
     <script type="text/javascript" src="translations.js"></script>
     <script type="text/javascript" src="translation.js"></script>
     
+    <!-- Style sheets -->
     <link rel="stylesheet" type="text/css" href="main.css">
-    <link rel="stylesheet" type="text/css" href="admin.css">
-    <link rel="stylesheet" type="text/css" href="adminlogin.css">
-    <link rel="stylesheet" type="text/css" href="Vip-login.css">
+    <link rel="stylesheet" type="text/css" href="login.css">
 
 </head>
 
@@ -27,28 +31,36 @@ then you can enter javascript calls, to test the functions.
 
 -->
 
-	<div id="pubname">The Flying Dutchman</div>
-	<h2 id="h2_admin"></h2>
+	<div class="pubname" id="pubname">The Flying Dutchman</div>
 	<div class="logincontainer">
-		<div class="innerLoginContainer">
-			<form name="adminLogin" onsubmit="validateAdminFormOnSubmit(this)" method="post">
-				<input type="text" name="username" id="username" placeholder="Username" required>
-				<input type="password" name="password" id="password" placeholder="Password" required>
-				<button type="submit" name="login" id="login"></button>
-				<a id="return" href="./index.html"></a>
-			</form>
-		</div>
-	</div>
+	    <div class="innerLoginContainer">
+	        <form name="adminLogin" onsubmit="validateAdminFormOnSubmit(this)" method="post">
+	        	<h2 id="h2_login"></h2>
+	        	<div class="container">
+	          		<label for="uname" id="uname"></label>
+	          		<input type="text" placeholder="Enter Username" id="username" name="username" required>
 
-	<div>
-		
+	          		<label for="psw" id="password"></label>
+	           		<input type="password" placeholder="Enter Password" id="password" name="password" required>
+	                
+	          		<button type="submit" name="login" id="login"></button>
+
+	          		<a id="return" href="./index.html"></a>
+	        	</div>
+	      	</form>
+	    </div>
 	</div>
 
 	<div class="footer">
-		<button class="eng">English</button>
-		<button class="swe">Svenska</button>
-	</div>
-
+    <span>
+      <img src="images/united-kingdom.png" alt="UK flag icon.">
+      <button class="eng">English</button>
+    </span>
+    <span>
+      <img src="images/sweden.png" alt="Sweden flag icon.">
+      <button class="swe">Svenska</button>
+    </span>
+  </div>
 
 </body>
 

@@ -1,0 +1,99 @@
+body {
+  background-image: url("./images/background_image.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h2 {
+	text-align: center;
+}
+
+/* These are styles for the log-in form*/
+
+.logincontainer {
+  display: block;
+  text-align: center;
+}
+
+.innerLoginContainer {
+  display: inline-block;
+  text-align: center;
+  margin-top: 3em;
+
+  font-size: 1.5em;
+  width: 50%;
+}
+
+form {
+  text-align: left;
+  border: 0.3em solid #f1f1f1;
+  padding-bottom: 2%;
+
+  background-color: white;
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 1.2em 2em;
+  margin: 0.8em 0;
+  display: inline-block;
+  border: 0.1em solid #ccc;
+  box-sizing: border-box;
+
+  font-size: 1em;
+}
+
+label {
+  font-weight: bold;
+}
+
+#login {
+  background-color: #4CAF50;
+  color: white;
+  padding: 1em 2em;
+  margin: 1em 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+
+  font-size: 1em;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+#return {
+  background-color: #0d5fe2;
+  color: white;
+  padding: 0.5em 1em;
+  border: none;
+  cursor: pointer;
+  width: 4em;
+  text-decoration: none;
+  font-size: 0.8em;
+}
+
+/*.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}*/
+
+.container {
+  padding: 1em;
+}
+
+span.psw {
+  float: right;
+  padding-top: 1em;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (min-width: 1400px) {
+  header{
+    font-size: 1em;
+  }
+  .innerLoginContainer {
+    font-size: 1em;
+  }
+}

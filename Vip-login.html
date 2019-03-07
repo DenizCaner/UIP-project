@@ -2,13 +2,19 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>VIP login page</title>
+  
+  <!-- Style sheets -->
   <link rel="stylesheet" type="text/css" href="main.css">
-	<link rel="stylesheet" type="text/css" href="Vip-login.css">
+	<link rel="stylesheet" type="text/css" href="login.css">
+
   <script type="text/javascript" src="jquery-1.11.1.js"></script>
   <script type="text/javascript" src="DBLoaded.js"></script>
   <script type="text/javascript" src="adminlogin.js"></script>
   <script type="text/javascript" src="sessionStorage.js"></script>
+  
+  <!-- Scripts for translation -->
   <script type="text/javascript" src="translations.js"></script>
   <script type="text/javascript" src="translation.js"></script>
 </head>
@@ -16,30 +22,36 @@
 	<header>
 		<div class="pubname">The Flying Dutchman</div>
 	</header>
-	
-  <h2 id="h2_login"></h2>
 
   <!--This is a form to fill the log-in information-->
   <div class="logincontainer">
     <div class="innerLoginContainer">
       <form name="VIPLogin" onsubmit="validateFormOnSubmit(this)" method="post">
+        <h2 id="h2_login"></h2>
         <div class="container">
-          <label for="uname"><b>Username</b></label>
+          <label for="uname" id="uname"></label>
           <input type="text" placeholder="Enter Username" id="username" name="uname" required>
 
-          <label for="psw"><b>Password</b></label>
+          <label for="psw" id="password"></label>
            <input type="password" placeholder="Enter Password" id="password" name="psw" required>
                 
           <button type="submit" id="login"></button>
+
+          <a id="return" href="./customer.html"></a>
         </div>
-        <a id="return" href="./customer.html"></a>
       </form>
     </div>
   </div>
 
   <div class="footer">
+    <span>
+      <img src="images/united-kingdom.png" alt="UK flag icon.">
       <button class="eng">English</button>
+    </span>
+    <span>
+      <img src="images/sweden.png" alt="Sweden flag icon.">
       <button class="swe">Svenska</button>
+    </span>
   </div>
 
 </body>

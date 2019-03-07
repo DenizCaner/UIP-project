@@ -130,5 +130,15 @@ var trans = {
         "key" : "logOut",
         "en" : "Log out",
         "se" : "Logga ut"
+    },
+    {
+        "key" : "uname",
+        "en" : "Username",
+        "se" : "Användarnamn"
+    },
+    {
+        "key" : "password",
+        "en" : "Password",
+        "se" : "Lösenord"
     }]
 }

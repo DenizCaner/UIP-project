@@ -137,7 +137,7 @@ var trans = {
         "se" : "Användarnamn"
     },
     {
-        "key" : "psw",
+        "key" : "password",
         "en" : "Password",
         "se" : "Lösenord"
     }]

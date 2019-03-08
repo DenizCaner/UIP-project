@@ -1,10 +1,13 @@
 
- // this function help to transfer JSON data to html frame and loop it 
+ 
+// this function help to transfer JSON data to html frame and append it, var beverages
 
 window.onload=function() {
 
 
+	// show Credit in the account of this VIP user, "userSEK" is defined in sessionStorage.js line 297
     
+    document.getElementById("accountCredit").innerText = "Your Credit is: " + userSEK + "Kr";
 
 
     for (var i = 0; i < beverages.length; i++) {
@@ -19,10 +22,12 @@ window.onload=function() {
             "</p></div><div class=\"volume\"><p>" + beverages[i].alcoholstrength + " " + "alcohol" +
             "</p></div><div class=\"toolBar\"><button class=\"normalbutton add-to-cart\" data-id='" + beverages[i].name + "'>Add to shopping cart</button></div></div></li>";
         $('#beverage_list').append(liStr);
-        console.log(liStr);
+        //console.log(liStr);
 
 
     }
+
+    // here is the filter and search function
 
     let filterInput = document.getElementById("myInput");
     filterInput.addEventListener('keyup', filterBeers);
@@ -101,7 +106,6 @@ window.onload=function() {
         }
     }
     // Setting up listeners for click event on all products and Empty Cart button as well
-    //增加事件监听，如果酒卡被点击，则判断是不是add-to-cart的按钮，如果是，调用addToCart方法以更新beverageInCart数组，并调用生成购物车方法
     var setupListeners = function() {
 
         var blist = document.querySelector('#beverage_list');
@@ -127,13 +131,13 @@ window.onload=function() {
     var addToCart = function(name){
         if (beverageInCart.length === 0){
             //The length of shopping cart is o, and a beverage will be added
-            console.log(findBeverage(name));
+            //console.log(findBeverage(name));
             beverageInCart.push({'beverage':findBeverage(name), "quantity":1});
         }else{
-            //遍历购物车，如果找到这件酒，增加数量1，找不到，增加1件酒
+            //If find the beverage, add one in quantity
             var found = false;
             beverageInCart.forEach(function (item){
-                console.log(item);
+                //console.log(item);
                if (item.beverage.name==name){
                    found = true;
                    item.quantity++;
@@ -149,7 +153,7 @@ window.onload=function() {
         var ret;
         beverages.forEach(function (item,index){
            if (item.name === name){
-               console.log(item);
+               //console.log(item);
                ret = item;
 
            }
@@ -158,6 +162,30 @@ window.onload=function() {
     }
 
     setupListeners();
+
+    //console.log(calculateTotalPrice());
+    //console.log(userSEK);
+// Here we add the alter when "checkout" button is clicked
+	$("#Checkout").click(function() {
+        var payTotal = calculateTotalPrice();
+        // if price in cart is lower than or equal to userSEK
+        if (payTotal <= userSEK){
+        	var r = confirm("Do you want to pay now?");
+  			if (r == true) {
+  				//document.write(userSEK - payTotal + "Kr");
+  				userSEK = userSEK - payTotal;
+  				document.getElementById("accountCredit").innerText = "Your Credit is: " + userSEK + "Kr";
+  				beverageInCart = [];
+  				generateCartList();
+  				console.log(userSEK);
+  			} else {
+  			}
+		} else {
+        	confirm("You have to top up.");
+        }
+    })
+  
+   
 
 }
 

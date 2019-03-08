@@ -1,3 +1,17 @@
+
+/* here is the style of the welcome header */
+
+.account {
+    font-family: "Arial";
+    font-weight: bold;
+}
+
+.beverage_list {
+    font-family: "Arial";
+}
+
+
+
 /* here is the style of the header to shwo the name of the pub */
 .pubname {
     width: 100%;

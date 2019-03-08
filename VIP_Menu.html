@@ -7,7 +7,6 @@
     <script type="text/javascript" src="menu.js"></script>
     <script type="text/javascript" src="VIP_Menu.js"></script>
     <script type="text/javascript" src="jquery-1.11.1.js"></script>
-    <!-- 加一行DBLoaded.js -->
     <script type="text/javascript" src="DBLoaded.js"></script>
     <script type="text/javascript" src="sessionStorage.js"></script>
     <link rel="stylesheet" type="text/css" href="VIP_Menu.css">
@@ -36,14 +35,11 @@
 
     
 <!--Here we implement the account information from the localStorage(user info) and sessionStorage(user id + credit) -->
-    <span id="accountWelcome">Welcome, </span>
-    <script>
-        document.write(localStorage.getItem('username') + "! ");
-    </script>
-    <span id="accountCredit">Your Credit is: </span>
-    <script>
-        document.write(userSEK + "Kr");
-    </script>
+    	<span id="accountWelcome">Welcome, </span>
+    	<script>
+        	document.write(localStorage.getItem('username') + "! ");
+    	</script>
+    	<span id="accountCredit"></span>
 
     </div>
 
@@ -59,7 +55,6 @@
 </div>
 
 <!--here we add a "shopping cart" container-->
-
  
 <div class="shopping-cart">
     <div class="shopping-cart-head">
@@ -71,14 +66,14 @@
       
       <div class="cart-buttons">
         <a href="#0" class="button empty-cart-btn">Empty all items</a>
-        <a href="#0" class="button cart-checkout">Checkout - Total: <span class="total-price">0 Kr</span></a>
+        <a href="#0" class="button cart-checkout" id="Checkout">Checkout - Total: <span class="total-price">0 Kr</span></a>
       </div>
     
 </div>
 
 
 
-<!-- here we disable the fix items of beverage, the HTML is written into the VIP_Menu.js file 
+<!-- here we disable the fixed html frame of beverage list, the HTML is written into the VIP_Menu.js file 
 <div>
     <ul id="menu_list">
         <li>
@@ -109,9 +104,7 @@
         </li>
     </ul>
 
-</div>
-
--->
+</div>-->
 
     <div class="footer">
         <button class="eng">English</button>

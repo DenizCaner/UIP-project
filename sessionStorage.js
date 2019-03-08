@@ -283,7 +283,7 @@ var userJsonStr = JSON.parse(sessionStorage.getItem('Balance'));
 //  filter the user_id according username from the DB and, store them into "getUserId"
 var filterName = DB.users.filter(function(i) {
 
-    // window.localStorage.getItem('username') from the userName stored into adminlogin.js 
+// window.localStorage.getItem('username') from the userName stored into adminlogin.js 
   return i.username === window.localStorage.getItem('username')
 });
 

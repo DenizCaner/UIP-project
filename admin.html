@@ -14,14 +14,16 @@
 	<script type="text/javascript" src="translations.js"></script>
 	<script type="text/javascript" src="translation.js"></script>
 
+<link rel="stylesheet" type="text/css" href="main.css">
 	<link rel="stylesheet" type="text/css" href="admin.css">
+	
+	
 	
 </head>
 
 <body>
-<div id="pubname">The Flying Dutchman
-	<button type="button" id = "return" onclick="location.href = 'index.html';"></button>
-</div> 
+<div class="pubname" id="pubname">The Flying Dutchman<button type="button" id = "return" onclick="location.href = 'index.html';"></button></div>
+
 <table id="tableau" >
 	<tr>
 		<td class="tables" id="t1" >
@@ -48,7 +50,7 @@
 		</td>
 		<td rowspan="3" class="menu" id="mt"> 
 			
-		<!-- Menutabs, used to select the correct menu below -->
+
 			<div id="menutabs">
 
 				<a id="beers" >
@@ -61,7 +63,13 @@
 				Sprit
 				</a>
 			</div>
-			
+			<!-- <div id="menutabs"> -->
+    		<!-- <ul id="mtabs"> -->
+    			<!-- <li id="beers"></li> -->
+        		<!-- <li id="whiskys"></li> -->
+        		<!-- <li id="sprits"></li> -->
+    		<!-- </ul> -->
+			<!-- </div> -->
 			<div class="menuView" id="beer">
 			</div>
 
@@ -83,7 +91,7 @@
 			</h2>
 			<p class="order" id="o3" ondrop="drop(event)" ondragover="allowDrop(event)"> Order : 
 			</p>
-			<button onclick="pay(3)" > Pay </button> <button class="edit" onclick="edit(3)"> Edit </button>
+			<button onclick="pay(3)" > Pay </button> 
 		</td>
 		<td class="tables" id="t4" >
 			<h1 id="table4" class="tname">
@@ -94,7 +102,7 @@
 			</h2>
 			<p class="order" id="o4" ondrop="drop(event)" ondragover="allowDrop(event)"> Order :
 			</p>
-			<button onclick="pay(4)" > Pay </button> 
+			<button onclick="pay(4)" > Pay </button>  
 		</td>
 	</tr>
 	<tr>
@@ -125,9 +133,16 @@
 </table>
 
 	<div class="footer">
-		<button class="eng">English</button>
-		<button class="swe">Svenska</button>
+		<span>
+			<img src="images/united-kingdom.png" alt="UK flag icon.">
+			<button class="eng">English</button>
+		</span>
+		<span>
+			<img src="images/sweden.png" alt="Sweden flag icon.">
+			<button class="swe">Svenska</button>
+		</span>
 	</div>
+
 
 </body>
 </html>

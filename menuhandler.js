@@ -6,7 +6,8 @@ $(function () {
 
     // First we hide all menus, but the one with all courses.
     //
-	$(".supp").hide();
+	//$(".supp").hide();
+	
     var names = ["Vinspirit","Whisky,Malt","Calvados", "Grappa", "Brandy","Cognac","Okryddad sprit","Kryddad sprit","\u00c3\u2013l, Ale","Rom","Whisky, Grain"];
 	
 	$("#beer").show();
@@ -39,10 +40,14 @@ $(function () {
    var types = ["Brandy och Vinsprit, Vinsprit", "Calvados", "Whisky , Malt", "Grappa och Marc, Grappa","Brandy och Vinsprit, Brandy","Cognac","Okryddad sprit","Kryddad sprit","\u00c3\u2013l, Ale","Rom, M\u00c3\u00b6rk","Whisky, Grain"];
 	var names = ["#Vinspirit","#Calvados","#WhiskyMalt", "#Grappa", "#Brandy","#Cognac","#Okryddadsprit","#Kryddadsprit","#Ale","#Rom","#WhiskyGrain"]; 
 	$(categorizeBeverages("\u00c3\u2013l, Ale", beverages)).appendTo("#beer");
+	$(categorizeBeverages("\u00c3\u2013l, Porter och Stout", beverages)).appendTo("#beer");
+	$(categorizeBeverages("\u00c3\u2013l, M\u00c3\u00b6rk lager", beverages)).appendTo("#beer");
+	
     $(categorizeBeverages("Whisky, Malt", beverages)).appendTo("#whisky");
     $(categorizeBeverages("Whisky, Grain", beverages)).appendTo("#whisky");
     $(categorizeBeverages("Whisky , Blended", beverages)).appendTo("#whisky");
     $(categorizeBeverages("Whisky, \u00c3\u2013vrig", beverages)).appendTo("#whisky");
+	
     $(categorizeBeverages("Cognac", beverages)).appendTo("#sprit");
     $(categorizeBeverages("Okryddad sprit", beverages)).appendTo("#sprit");
     $(categorizeBeverages("Kryddad sprit", beverages)).appendTo("#sprit");
@@ -73,7 +78,7 @@ function categorizeBeverages(type, arr) {
         // Otherwise we skip to the next item.
         //
         if (arr[i].catgegory == type) {
-            out += '<div id="' + "menuitem" + i + '" draggable="true" ondragstart="drag(event)">' + arr[i].name+ ' <span class="price">' + arr[i].priceinclvat + '</span><button class="supp" id="supp'+id+'" onclick="supp('+id+')"> X</button></div>';
+            out += '<div><div class="menuitem" id="' + "menuitem" + id + '" draggable="true" ondragstart="drag(event)" onclick=\"supp('+id+')\">' + arr[i].name+ ' <span class="price">' + arr[i].priceinclvat + '</span><button class=\"supp\"  > X</button></div></div>';
 			id++;
 		}
     }

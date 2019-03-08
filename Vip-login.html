@@ -26,14 +26,14 @@
   <!--This is a form to fill the log-in information-->
   <div class="logincontainer">
     <div class="innerLoginContainer">
-      <form name="VIPLogin" onsubmit="validateFormOnSubmit(this)" method="post">
+      <form name="VIPLogin" onsubmit="return validateFormOnSubmit(this)" method="post">
         <h2 id="h2_login"></h2>
         <div class="container">
           <label for="uname" id="uname"></label>
           <input type="text" placeholder="Enter Username" id="username" name="uname" required>
 
-          <label for="psw" id="password"></label>
-           <input type="password" placeholder="Enter Password" id="password" name="psw" required>
+          <label for="psw" id="psw"></label>
+          <input type="password" placeholder="Enter Password" id="password" name="psw" required>
                 
           <button type="submit" id="login"></button>
 

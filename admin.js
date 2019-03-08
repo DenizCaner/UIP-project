@@ -54,7 +54,7 @@ function pay(tempid) {
     var x = document.getElementById("o" + tempid);
     var order = $("#o"+tempid).html();
     // window.confirm("The Client pays his order "+x);
-    if (window.confirm("The Client pays his order " +order)) {
+    if (window.confirm("Are you sure you want to place order ?")) {
         // the price is set to 0 for a new order
         $("#t" + tempid + " .tsum").text("0 kr.");
         $("#o" + tempid).text("Order :");
@@ -62,56 +62,8 @@ function pay(tempid) {
     }
 }
 
-/* function supp(id){
-    //order = $("#o"+tempid).html();
-
-       /* elementCliquer = Event.element(evt);
-        var myID = elementCliquer.id;
-       // var idElt = this.getAttribute('id');
-        window.confirm("Supp " +id);
-       // var name=idElt.slice(4, idElt.length);
-        var supp = $("#o"+tempid+ " #newId"+id).html();
-        var all = $("#o"+tempid).html();
-        if( window.confirm("Supp elt " +supp)){
-            var dataSupp= getPrices(supp);
-            var data= getPrices(all);
-            var sum=sumTotal(data);
-            var test=parseInt(dataSupp[0].innerText);
-            if (window.confirm("Supp elt price " +test)){
-                var newSum= sum-test;
-                $("#t" + tempid + " .tsum").text(newSum + " kr.");
-                 $("#o"+tempid+" #newId"+name).remove();
-            }
-        }
-} */
-
-    /*var x = document.getElementById(this);
-        if(){
-            x.
-        }*/
-   // $("#o"+tempid+" .supp").hide();
-    /*for ( int i=0; i<x.size; i++){
-        out+=x[i];
-    }*/
-   // ;
 
 
-/*
-    var name=
-        // remove the object
-        o = $("#o"+tempid +" .div").html();
-    // if( window.confirm("Supp " +o)) {
-    $("#o"+tempid+" .div").remove();
-//}*/
-
-/*function supp(id){
-    o = $("#menuitem"+id).html();
-    if( window.confirm("Supp " +o)){
-        $("#menuitem"+id).remove();
-    }
-
-
-}*/
 
 function supp(id) {
 

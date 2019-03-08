@@ -6,7 +6,7 @@
 // as it is. It will prevent the default behaviour, which is not to accept
 // any drops.
 //
-var inc=0;
+//var x= 0;
 function allowDrop(ev) {
     ev.preventDefault(); // This makes the item accept drop actions.
 }
@@ -42,9 +42,12 @@ function drop(ev) {
     // an example, rather than as an individual object.
     //
     var nodeCopy = document.getElementById(data).cloneNode(true);
+    var idElt = nodeCopy.id;
 
-    nodeCopy.id = "newId"+inc;  // We cannot use the same ID. Ideally we should generate the new ID with a
-     inc++;                       // random or incremental number.
+    var tempid = "#" + ev.target.id;
+    var x= idElt.slice(8,idElt.length);
+    // get the order where the item is drop
+    nodeCopy.id = "newId"+x;
 
     nodeCopy.draggable = "false"; // The new element is set as being not draggable.
 
@@ -52,11 +55,13 @@ function drop(ev) {
 
     // Get the ID of the target (the order).
     //
-    var tempid = "#" + ev.target.id;
+    
+    //window.confirm("drop here "+ev.target.id;
 
     // Get the HTML content of the order.
     //
     order = $(tempid).html();
+    $(tempid+" .supp").show();
 
     // Get the prices from the order.
     //
@@ -69,7 +74,7 @@ function drop(ev) {
     // Replace the content of the order with the new sum
     //
     $(orderTable(tempid) + " .tsum").text(sum + " kr.");
-    $(orderTable(tempid)+" .supp").show();
+    //$(orderTable(tempid)+" .supp").show();
 }
 
 // Get the list of prices from all the currentorders.

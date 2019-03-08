@@ -32,8 +32,14 @@ td{
     text-align: left;
 }
 .order{
-    heigth: 100px;
-
+    width: 250px;
+    min-height: 100px;
+    background-color: white;
+    border-width: 2px;
+    border-style: double;
+    border-color: black;
+    border-image: initial;
+    padding: 4px;
 }
 /*
 Definition of a standard button of the interface.

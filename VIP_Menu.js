@@ -7,7 +7,7 @@ window.onload=function() {
 
 	// show Credit in the account of this VIP user, "userSEK" is defined in sessionStorage.js line 297
     
-    document.getElementById("accountCredit").innerText = "Your Credit is: " + userSEK + "Kr";
+    document.getElementById("credit").innerText = userSEK + "Kr";
 
 
     for (var i = 0; i < beverages.length; i++) {
@@ -174,7 +174,7 @@ window.onload=function() {
   			if (r == true) {
   				//document.write(userSEK - payTotal + "Kr");
   				userSEK = userSEK - payTotal;
-  				document.getElementById("accountCredit").innerText = "Your Credit is: " + userSEK + "Kr";
+  				document.getElementById("credit").innerText = userSEK + "Kr";
   				beverageInCart = [];
   				generateCartList();
   				console.log(userSEK);

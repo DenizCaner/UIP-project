@@ -9,6 +9,7 @@
     <script type="text/javascript" src="jquery-1.11.1.js"></script>
     <script type="text/javascript" src="DBLoaded.js"></script>
     <script type="text/javascript" src="sessionStorage.js"></script>
+    <link rel="stylesheet" type="text/css" href="main.css">
     <link rel="stylesheet" type="text/css" href="VIP_Menu.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -39,7 +40,7 @@
     	<script>
         	document.write(localStorage.getItem('username') + "! ");
     	</script>
-    	<span id="accountCredit"></span>
+    	<span id="accountCredit"></span><span id="credit"></span>
 
     </div>
 
@@ -71,47 +72,17 @@
     
 </div>
 
-
-
-<!-- here we disable the fixed html frame of beverage list, the HTML is written into the VIP_Menu.js file 
-<div>
-    <ul id="menu_list">
-        <li>
-            <div class="beverage_card">
-                <div class="beverage_img">
-
-                </div>
-                <div class="beverage_name">
-                    <span class="name_data">name</span>
-                    <span class="type">catgegory</span>
-                </div>
-
-                <div class="year">
-                    <p>introduced</p>
-                </div>
-                <div class="price">
-                    <p>priceinclvat</p>
-                </div>
-                <div class="volume">
-                    <p>alcoholstrength</p>
-                </div>
-
-                <div class="toolBar">
-                    <button class="normalbutton">Add to shopping cart</button>
-                    
-                </div>
-            </div>
-        </li>
-    </ul>
-
-</div>-->
-
     <div class="footer">
-        <button class="eng">English</button>
-        <button class="swe">Svenska</button>
-        <button class="left" id="logOut" onclick="location.href = './customer.html';"></button>
+        <span>
+          <img src="images/united-kingdom.png" alt="UK flag icon.">
+          <button class="eng">English</button>
+        </span>
+        <span>
+            <img src="images/sweden.png" alt="Sweden flag icon.">
+          <button class="swe">Svenska</button>
+        </span>
+        <button type="button" id = "return" onclick="location.href = 'index.html';"></button>
     </div>
-
 </body>
 </html>
 

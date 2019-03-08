@@ -1,4 +1,36 @@
 
+/* Background */
+
+body {
+  background-image: url("./images/background_image.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+/*Title */
+
+#title {
+  text-align: left;
+}
+
+#title span {
+  margin-left: 1em;
+}
+
+#title button {
+  background-color: #556B2F;
+  border: none;
+  color: navajowhite;
+  font-size: 0.5em;
+  margin: 0.5em 2em 0.5em 0em;
+  float: right;
+}
+
+#title button:hover {
+  opacity: 0.5;
+}
+
 /* Weekly Recommendations */
 .Mainbody{
 

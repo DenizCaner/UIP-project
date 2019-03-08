@@ -146,9 +146,6 @@ Definition of a standard button of the interface.
     background-color: red;
 }
 
-.footer {
-    position: relative;
-}
 /*
     background-color: #556B2F;
     text-align: center;

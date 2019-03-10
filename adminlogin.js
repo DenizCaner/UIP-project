@@ -8,10 +8,8 @@ function validateAdminFormOnSubmit(theForm){
     for (i=0; i < DB.users.length; i++) {
         if ((userName == DB.users[i].username) && (password == DB.users[i].password)) {
         	if (DB.users[i].credentials == 0) {
-                window.open("./admin.html");
-                window.close();
-
-                return;
+                window.location.assign("./admin.html");
+                return false;
         	}
         	alert("You are not an admin.");
         	return;
@@ -19,6 +17,7 @@ function validateAdminFormOnSubmit(theForm){
     }
 
     alert("Wrong username or password.");
+    return;
 }
 
 function validateFormOnSubmit(theForm){
@@ -31,11 +30,11 @@ function validateFormOnSubmit(theForm){
 
     for (i=0; i < DB.users.length; i++) {
         if ((userName == DB.users[i].username) && (password == DB.users[i].password)) {
-            window.open("./VIP_Menu.html");
-            window.close();
-            return;
+            window.location.assign("./VIP_menu.html");
+            return false;
         }
     }
 
     alert("Wrong username or password.");
+    return;
 }

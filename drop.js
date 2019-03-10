@@ -55,8 +55,8 @@ function drop(ev) {
 
     // Get the ID of the target (the order).
     //
-
-    //window.confirm("drop here "+ev.target.id);
+    
+    //window.confirm("drop here "+ev.target.id;
 
     // Get the HTML content of the order.
     //
@@ -74,7 +74,7 @@ function drop(ev) {
     // Replace the content of the order with the new sum
     //
     $(orderTable(tempid) + " .tsum").text(sum + " kr.");
-
+    //$(orderTable(tempid)+" .supp").show();
 }
 
 // Get the list of prices from all the currentorders.
@@ -83,7 +83,7 @@ function getPrices (htmlString) {
 
     // We create a new jQuery object and put the HTML string into it.
     //
-    var el = $( '<div></div>' );
+    var el = $( '<div> </div>' );
     el.html(htmlString);
 
     // Then we can use jQuery to find all elements in this string.

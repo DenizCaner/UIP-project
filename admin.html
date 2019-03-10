@@ -14,10 +14,9 @@
 	<script type="text/javascript" src="translations.js"></script>
 	<script type="text/javascript" src="translation.js"></script>
 
-<link rel="stylesheet" type="text/css" href="main.css">
+
+	<link rel="stylesheet" type="text/css" href="main.css">	
 	<link rel="stylesheet" type="text/css" href="admin.css">
-	
-	
 	
 </head>
 
@@ -50,7 +49,7 @@
 		</td>
 		<td rowspan="3" class="menu" id="mt"> 
 			
-
+		<!-- Menutabs, used to select the correct menu below -->
 			<div id="menutabs">
 
 				<a id="beers" >
@@ -63,13 +62,7 @@
 				Sprit
 				</a>
 			</div>
-			<!-- <div id="menutabs"> -->
-    		<!-- <ul id="mtabs"> -->
-    			<!-- <li id="beers"></li> -->
-        		<!-- <li id="whiskys"></li> -->
-        		<!-- <li id="sprits"></li> -->
-    		<!-- </ul> -->
-			<!-- </div> -->
+			
 			<div class="menuView" id="beer">
 			</div>
 
@@ -91,7 +84,7 @@
 			</h2>
 			<p class="order" id="o3" ondrop="drop(event)" ondragover="allowDrop(event)"> Order : 
 			</p>
-			<button onclick="pay(3)" > Pay </button> 
+			<button onclick="pay(3)" > Pay </button> <!-- <button class="edit" onclick="edit(3)"> Edit </button> -->
 		</td>
 		<td class="tables" id="t4" >
 			<h1 id="table4" class="tname">
@@ -102,7 +95,7 @@
 			</h2>
 			<p class="order" id="o4" ondrop="drop(event)" ondragover="allowDrop(event)"> Order :
 			</p>
-			<button onclick="pay(4)" > Pay </button>  
+			<button onclick="pay(4)" > Pay </button> 
 		</td>
 	</tr>
 	<tr>
@@ -141,8 +134,8 @@
 			<img src="images/sweden.png" alt="Sweden flag icon.">
 			<button class="swe">Svenska</button>
 		</span>
+		<button type="button" id = "return" onclick="location.href = 'index.html';"></button>
 	</div>
-
 
 </body>
 </html>

@@ -7,9 +7,9 @@
 	<script language="JavaScript" type="text/javascript" src="jquery-1.11.1.js"></script>
 	<script type="text/javascript" src="menu.js"></script>
 	<script type="text/javascript" src="menuhandler.js"></script>
-	<!-- <script type="text/javascript" src="stack.js"></script> -->
+    <script type="text/javascript" src="stack.js"></script> 
 	<script language="JavaScript" type="text/javascript" src="admin.js"></script>
-	<script language="JavaScript" type="text/javascript" src="drop.js"></script>
+	<!--<script language="JavaScript" type="text/javascript" src="drop.js"></script> -->
 
 	<script type="text/javascript" src="translations.js"></script>
 	<script type="text/javascript" src="translation.js"></script>
@@ -22,7 +22,7 @@
 </head>
 
 <body>
-<div class="pubname" id="pubname">The Flying Dutchman<button type="button" id = "return" onclick="location.href = 'index.html';"></button></div>
+<div class="pubname" id="pubname">The Flying Dutchman<button type="button" id = "return" onclick="location.href = 'index.html';"></button><button type="button" id = "undo" onclick ="undo()""></button><button type="button" id = "redo" onclick ="redo()""></button></div>
 
 <table id="tableau" >
 	<tr>

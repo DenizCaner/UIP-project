@@ -1,7 +1,7 @@
 
 body {
   background-image: url("./images/background_image.jpg");
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-size: cover;
 }
 
@@ -133,7 +133,7 @@ body {
     /* This is the style of the "go to top" button */
     .top{
     width: 50px;
-    height: 100px;
+    height: 80px;
     background-color: #556B2F;
     border-radius: 10px;
     position: fixed;
@@ -162,12 +162,13 @@ body {
   position: fixed;
   top: 80px;
   right: 0;
-  width: 300px;
+  width: 15%;
   min-heigh: 300px;
   margin-right: 20px;
   margin-top: 10px;
   padding: 20px;
   background: #ebebe0;
+  font-size: 85%;
 }
 
 .shopping-cart-head {

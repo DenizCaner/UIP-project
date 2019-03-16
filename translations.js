@@ -18,8 +18,8 @@ var trans = {
     },
     {
         "key" : "login",
-        "en" : "Log in",
-        "se" : "Logga in"
+        "en" : "VIP",
+        "se" : "VIP"
     },
     {
         "key" : "recommendations",
@@ -140,5 +140,20 @@ var trans = {
         "key" : "password",
         "en" : "Password",
         "se" : "Lösenord"
+    },
+    {
+        "key" : "adminlogin",
+        "en" : "Admin",
+        "se" : "Admin"
+    },
+    {
+        "key" : "undo",
+        "en" : "Undo",
+        "se" : "Ångra"
+    },
+    {
+        "key" : "redo",
+        "en" : "Redo",
+        "se" : "Upprepa"
     }]
 }

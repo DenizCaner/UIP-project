@@ -70,32 +70,38 @@ window.onload=function() {
     <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for beverage.." title="Type in a name">
     </div>
     */
+    
+
+    // here define the different variables by using querySelector() method, to get the first element in the document with class "" in () 
     var cartEl =     document.querySelector(".shopping-cart-list"),
         productQuantityEl = document.querySelector(".product-quantity"),
         emptyCartEl = document.querySelector(".empty-cart-btn"),
         cartCheckoutEl = document.querySelector(".cart-checkout"),
         totalPriceEl = document.querySelector(".total-price");
-    var beverageInCart = [];
+
+    var beverageInCart = []; //defin beverageInCart as an array
+
     var calculateTotalPrice = function() {
-        return beverageInCart.reduce(function(total, item) {
-            return total + (item.beverage.priceinclvat *  item.quantity);
+        return beverageInCart.reduce(function(total, item) { //get the sum of the numbers in the array by using Array reduce() method
+            return total + (item.beverage.priceinclvat *  item.quantity); // numbers are in()
         }, 0);
-    }
+    } // here calculate the total price of the beverage in shopping cart, by getting "priceinclvat" from beverage. JSON file
+
     var generateCartList = function() {
 
-        cartEl.innerHTML = "";
+        cartEl.innerHTML = ""; //write the shopping cart list in html
 
-        beverageInCart.forEach(function(item) {
-            var li = document.createElement("li");
+        beverageInCart.forEach(function(item) {  // list each item in array by using forEach() method
+            var li = document.createElement("li"); // create a <li> element in html
             li.innerHTML = `${item.quantity} ${item.beverage.name} - ${item.beverage.priceinclvat * item.quantity} Kr `;
             cartEl.appendChild(li);
-        });
+        }); // use `string text ${expression} string text` as template literals, to show the quantity, the name and the price (price*quantity)
 
-        productQuantityEl.innerHTML = beverageInCart.length;
+        productQuantityEl.innerHTML = beverageInCart.length; // the quantity of product equals to the number of beverages in cart 
 
-        generateCartButtons();
+        generateCartButtons(); //generate the checkout button
     }
-    var generateCartButtons = function() {
+    var generateCartButtons = function() { //make the button hidden if there's nothing in shopping cart
         if(beverageInCart.length > 0) {
             emptyCartEl.style.display = "block";
             cartCheckoutEl.style.display = "block"
@@ -108,37 +114,49 @@ window.onload=function() {
     // Setting up listeners for click event on all products and Empty Cart button as well
     var setupListeners = function() {
 
-        var blist = document.querySelector('#beverage_list');
-        blist.addEventListener("click", function(event) {
+        var blist = document.querySelector('#beverage_list'); // define
+        blist.addEventListener("click", function(event) { // when clicking, an event is triggered
 
-            var el = event.target;
-            if(el.classList.contains("add-to-cart")) {
-                var elId = el.dataset.id;
-                addToCart(elId);
+            var el = event.target; // define the click button/target as class "add-to-cart" in html
+            if(el.classList.contains("add-to-cart")) { //if click
+                var elId = el.dataset.id; //find the id in the database
+                addToCart(elId); // see line137
 
             }
         });
-        emptyCartEl.addEventListener("click", function(event) {
-            if(confirm("Are you sure to empty the shopping cart?")) {
-                beverageInCart = [];
-            }
-            generateCartList();
+        emptyCartEl.addEventListener("click", function(event) { // when clicking the "empty" button, an popup is triggered
+            $('#pop3').simplePopup(); // use popup jquery here
+        });
+
+        // if purchase box clicked yes, userSEK = userSEK - calculateTotalPrice()
+        var moneyPay = document.querySelector('#payYes');
+        moneyPay.addEventListener("click",function(event){
+        userSEK = userSEK - calculateTotalPrice();
+  		document.getElementById("credit").innerText = userSEK + "Kr";
+        beverageInCart = [];
+        generateCartList(); 
+        })
+        // if empty confirm box clicked yes, clear beverageInCart and generateCartList()
+        var emptyCartYes = document.querySelector('#emptyYes');
+        emptyCartYes.addEventListener("click",function(event){
+        	beverageInCart = [];
+        	generateCartList(); 
         });
 
 
     }
 
-    var addToCart = function(name){
+    var addToCart = function(name){ //define the addToCart
         if (beverageInCart.length === 0){
-            //The length of shopping cart is o, and a beverage will be added
+            //The length of shopping cart is o at the beginning, and then a beverage will be added
             //console.log(findBeverage(name));
-            beverageInCart.push({'beverage':findBeverage(name), "quantity":1});
+            beverageInCart.push({'beverage':findBeverage(name), "quantity":1}); // find the beverage through the "name" in database (JSON file), use push() method to add new items to the end of an array and return the new length
         }else{
             //If find the beverage, add one in quantity
             var found = false;
-            beverageInCart.forEach(function (item){
+            beverageInCart.forEach(function (item){ //list each item in the array "beverageInCart"
                 //console.log(item);
-               if (item.beverage.name==name){
+               if (item.beverage.name==name){ //if find the name
                    found = true;
                    item.quantity++;
                }
@@ -163,35 +181,36 @@ window.onload=function() {
 
     setupListeners();
 
+
+    var generatePayButton = function() { //make the button hidden if checkout button is not clicked
+        if(beverageInCart.length > 0) {
+            emptyCartEl.style.display = "block";
+            cartCheckoutEl.style.display = "block"
+            totalPriceEl.innerHTML =  calculateTotalPrice() + " Kr";
+        } else {
+            emptyCartEl.style.display = "none";
+            cartCheckoutEl.style.display = "none";
+        }
+    }
     //console.log(calculateTotalPrice());
     //console.log(userSEK);
 // Here we add the alter when "checkout" button is clicked
 	$("#Checkout").click(function() {
-        var payTotal = calculateTotalPrice();
         // if price in cart is lower than or equal to userSEK
+        payTotal = calculateTotalPrice();
         if (payTotal <= userSEK){
-        	var r = confirm("Do you want to pay now?");
-  			if (r == true) {
-  				//document.write(userSEK - payTotal + "Kr");
-  				userSEK = userSEK - payTotal;
-  				document.getElementById("credit").innerText = userSEK + "Kr";
-  				beverageInCart = [];
-  				generateCartList();
-  				console.log(userSEK);
-  			} else {
-  			}
+ 			$('#pop1').simplePopup();  // pop up "are you sure to pay now?"
 		} else {
-        	confirm("You have to top up.");
-        }
+			$('#pop2').simplePopup();  // pop up "you have to top up."
+		}
     })
-  
-   
 
+   
 }
 
 
 
-
+		
 
 
 

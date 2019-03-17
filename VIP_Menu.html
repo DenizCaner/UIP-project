@@ -7,6 +7,8 @@
     <script type="text/javascript" src="menu.js"></script>
     <script type="text/javascript" src="VIP_Menu.js"></script>
     <script type="text/javascript" src="jquery-1.11.1.js"></script>
+    <!-- add popup jquery-->
+    <script type="text/javascript" src="jquery.simplePopup.js"></script>
     <script type="text/javascript" src="DBLoaded.js"></script>
     <script type="text/javascript" src="sessionStorage.js"></script>
     <link rel="stylesheet" type="text/css" href="main.css">
@@ -34,17 +36,32 @@
 
 <body>
 
-    <div class="account"> 
+<div class="account">
 
-    
-<!--Here we implement the account information from the localStorage(user info) and sessionStorage(user id + credit) -->
-    	<span id="accountWelcome">Welcome, </span>
-    	<script>
-        	document.write(localStorage.getItem('username') + "! ");
-    	</script>
-    	<span id="accountCredit"></span><span id="credit"></span>
-
+<!--Here we add two conditions of popUp: pop1: credit is enough; pop2: insufficient credits--> 
+    <div id="pop1" class="simplePopup">
+        <p> Are you sure to pay now? </p>
+        <button id = "payYes"> Yes </button>
+        <button id = "payNo"> No </button>
     </div>
+    <div id="pop2" class="simplePopup">
+    	<p> You have to top up. Please contact our staff. </p>
+    </div>
+<!--Here we add an cart empty confirm popUp -->
+	<div id="pop3" class="simplePopup">
+        <p> Are you sure to empty the shopping cart?</p>
+        <button id = "emptyYes"> Yes </button>
+        <button id = "emptyNo"> No </button>
+    </div>
+
+<!--Here we implement the account information from the localStorage(user info) and sessionStorage(user id + credit) -->
+    <span id="accountWelcome">Welcome, </span>
+    <script>
+        document.write(localStorage.getItem('username') + "! ");
+    </script>
+    <span id="accountCredit"></span><span id="credit"></span>
+
+</div>
 
 <div>
     <ul id="beverage_list"></ul>
@@ -71,6 +88,9 @@
         <a href="#0" class="button empty-cart-btn">Empty all items</a>
         <a href="#0" class="button cart-checkout" id="Checkout">Checkout - Total: <span class="total-price">0 Kr</span></a>
       </div>
+      <!-- add a purchase area
+      <div class = "purchase-button" id = "purchaseButton"></div> -->
+
     
 </div>
 

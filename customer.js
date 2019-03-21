@@ -82,11 +82,11 @@ $(function () {
     $(categorizeFoods("main", food)).appendTo("#maincourse");
     $(categorizeFoods("dessert", food)).appendTo("#dessert");
 
-    $("#vipLogin").click(function () { /* Here we show and hide the field. */
-        window.open("./ Vip-login.html");
-        window.close();
-        return;
-    });
+    //$("#vipLogin").click(function () { /* Here we show and hide the field. */
+    //    window.open("./ Vip-login.html");
+    //    window.close();
+    //    return;
+    //});
     
     
 });

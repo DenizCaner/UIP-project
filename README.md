@@ -1,4 +1,5 @@
 UIP-project
+
 ##Website map
 
 This web is designed for three kinds of users:
@@ -10,8 +11,8 @@ This web is designed for three kinds of users:
 
 ##How does admin work?
 
-* Open the index.html;
-* Click the "Employee" button, redirect to adminlogin.html;
+* Open the customer.html;
+* Click the "Admin" button, redirect to adminlogin.html;
 * Select any account in DBLoaded.js, input the username and password on adminlogin.html;
 * Redirect to "admin.html"; 
 * Congratulations, you can order now!
@@ -19,8 +20,7 @@ This web is designed for three kinds of users:
 
 ##How does VIP work?
 
-* Open the index.html
-* Click the "Customer" button, redirect to customer.html;
+* Open the customer.html
 * Click the "VIP" button, redirect to VIP-login.html;
 * Select any account in DBLoaded.js, input the username and password on VIP-login.html;
 * Redirect to "VIP_Menu.html" (you have to login rather than open it directly)

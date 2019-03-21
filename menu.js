@@ -1,5 +1,3 @@
-var weekly = []
-
 var food = [
         {"name": "Apple Pie", "price": "30", "type":"dessert", "contains": ["gluten", "nuts"]},
         {"name": "Pasta Carbonara", "price": "70", "type": "main"},

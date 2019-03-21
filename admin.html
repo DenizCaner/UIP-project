@@ -3,11 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<title>The Flying Dutchman</title>
-	
+
 	<script language="JavaScript" type="text/javascript" src="jquery-1.11.1.js"></script>
+	<!-- add popup jquery-->
+	<script type="text/javascript" src="jquery.simplePopup.js"></script>
 	<script type="text/javascript" src="menu.js"></script>
 	<script type="text/javascript" src="menuhandler.js"></script>
-    <script type="text/javascript" src="stack.js"></script> 
+    <script type="text/javascript" src="stack.js"></script>
 	<script language="JavaScript" type="text/javascript" src="admin.js"></script>
 	<!--<script language="JavaScript" type="text/javascript" src="drop.js"></script> -->
 
@@ -15,120 +17,126 @@
 	<script type="text/javascript" src="translation.js"></script>
 
 
-	<link rel="stylesheet" type="text/css" href="main.css">	
+	<link rel="stylesheet" type="text/css" href="main.css">
 	<link rel="stylesheet" type="text/css" href="admin.css">
-	
+
 </head>
 
 <body>
-<div class="pubname" id="title">
-	<span>The Flying Dutchman<span>
-	<button type="button" id = "logOut" onclick="location.href = 'customer.html';"></button>
-	<button type="button" id = "undo" onclick ="undo()">undo</button>
-	<button type="button" id = "redo" onclick ="redo()">redo</button>
-</div>
+	<div class="pubname" id="title">
+		<span>The Flying Dutchman<span>
+		<button type="button" id = "logOut" onclick="location.href = 'customer.html';"></button>
+		<button type="button" id = "undo" onclick ="undo()">undo</button>
+		<button type="button" id = "redo" onclick ="redo()">redo</button>
+	</div>
 
-<table id="tableau" >
-	<tr>
-		<td class="tables" id="t1" >
-			<h1 id="table1" class="tname">
-			Table 1
-			</h1>
-			<h2 class="tsum" >
-			0 kr
-			</h2>
-			<p class="order" id="o1" ondrop="drop(event)" ondragover="allowDrop(event)"> Order : 
-			</p>
-			<button onclick="pay(1)"> Pay </button> 
-		</td>
-		<td class="tables" id="t2" >
-			<h1 id="table2" class="tname">
-			Table 2
-			</h1>
-			<h2 class="tsum" >
-			0 kr
-			</h2>
-			<p class="order" id="o2"ondrop="drop(event)" ondragover="allowDrop(event)"> Order : 
-			</p>
-			<button onclick="pay(2)"> Pay </button> 
-		</td>
-		<td rowspan="3" class="menu" id="mt"> 
-			
-		<!-- Menutabs, used to select the correct menu below -->
-			<div id="menutabs">
+	<div id="pop1" class="simplePopup">
+		<p> Are you sure you want to place order ? </p>
+		<button id="payYes"> Yes </button>
+		<button id="payNo"> No </button>
+	</div>
 
-				<a id="beers" >
-				Beer
-				</a >
-				<a id="whiskys">
-				Whisky
-				</a>
-				<a id="sprits" >
-				Sprit
-				</a>
-			</div>
-			
-			<div class="menuView" id="beer">
-			</div>
+	<table id="tableau" >
+		<tr>
+			<td class="tables" id="t1" >
+				<h1 id="table1" class="tname">
+				Table 1
+				</h1>
+				<h2 class="tsum" >
+				0 kr
+				</h2>
+				<p class="order" id="o1" ondrop="drop(event)" ondragover="allowDrop(event)"> Order :
+				</p>
+				<button onclick="pay(1)"> Pay </button>
+			</td>
+			<td class="tables" id="t2" >
+				<h1 id="table2" class="tname">
+				Table 2
+				</h1>
+				<h2 class="tsum" >
+				0 kr
+				</h2>
+				<p class="order" id="o2"ondrop="drop(event)" ondragover="allowDrop(event)"> Order :
+				</p>
+				<button onclick="pay(2)"> Pay </button>
+			</td>
+			<td rowspan="3" class="menu" id="mt">
 
-			<div class="menuView" id="whisky">
-			</div>
+			<!-- Menutabs, used to select the correct menu below -->
+				<div id="menutabs">
 
-			<div class="menuView" id="sprit">
-			</div>
-		</td>
-	</tr>
+					<a id="beers" >
+					Beer
+					</a >
+					<a id="whiskys">
+					Whisky
+					</a>
+					<a id="sprits" >
+					Sprit
+					</a>
+				</div>
 
-	<tr>
-		<td class="tables" id="t3" >
-			<h1 id="table3" class="tname">
-			Table 3
-			</h1>
-			<h2 class="tsum">
-			0 kr
-			</h2>
-			<p class="order" id="o3" ondrop="drop(event)" ondragover="allowDrop(event)"> Order : 
-			</p>
-			<button onclick="pay(3)" > Pay </button> <!-- <button class="edit" onclick="edit(3)"> Edit </button> -->
-		</td>
-		<td class="tables" id="t4" >
-			<h1 id="table4" class="tname">
-			Table 4
-			</h1>
-			<h2 class="tsum">
-			0 kr
-			</h2>
-			<p class="order" id="o4" ondrop="drop(event)" ondragover="allowDrop(event)"> Order :
-			</p>
-			<button onclick="pay(4)" > Pay </button> 
-		</td>
-	</tr>
-	<tr>
-		<td class="tables" id="t5" id="t5" >
-			<h1 id="table5" class="tname">
-			Table 5
-			</h1>
-			<h2 class="tsum">
-			0 kr
-			</h2>
-	
-			<p class="order" id="o5" ondrop="drop(event)" ondragover="allowDrop(event)"> Order : </p>
-	 
-			<button onclick="pay(5)"> Pay </button> 
-		</td>
-		<td class="tables" id="t6" id="t6" >
-			<h1 id="table6" class="tname">
-			Table 6
-			</h1>
-			<h2 class="tsum">
-			0 kr
-			</h2>
-			<p class="order" id="o6" ondrop="drop(event)" ondragover="allowDrop(event)"> Order :
-			</p>
-			<button onclick="pay(6)"> Pay </button> 
-		</td>
-	</tr>
-</table>
+				<div class="menuView" id="beer">
+				</div>
+
+				<div class="menuView" id="whisky">
+				</div>
+
+				<div class="menuView" id="sprit">
+				</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="tables" id="t3" >
+				<h1 id="table3" class="tname">
+				Table 3
+				</h1>
+				<h2 class="tsum">
+				0 kr
+				</h2>
+				<p class="order" id="o3" ondrop="drop(event)" ondragover="allowDrop(event)"> Order :
+				</p>
+				<button onclick="pay(3)" > Pay </button> <!-- <button class="edit" onclick="edit(3)"> Edit </button> -->
+			</td>
+			<td class="tables" id="t4" >
+				<h1 id="table4" class="tname">
+				Table 4
+				</h1>
+				<h2 class="tsum">
+				0 kr
+				</h2>
+				<p class="order" id="o4" ondrop="drop(event)" ondragover="allowDrop(event)"> Order :
+				</p>
+				<button onclick="pay(4)" > Pay </button>
+			</td>
+		</tr>
+		<tr>
+			<td class="tables" id="t5" id="t5" >
+				<h1 id="table5" class="tname">
+				Table 5
+				</h1>
+				<h2 class="tsum">
+				0 kr
+				</h2>
+
+				<p class="order" id="o5" ondrop="drop(event)" ondragover="allowDrop(event)"> Order : </p>
+
+				<button onclick="pay(5)"> Pay </button>
+			</td>
+			<td class="tables" id="t6" id="t6" >
+				<h1 id="table6" class="tname">
+				Table 6
+				</h1>
+				<h2 class="tsum">
+				0 kr
+				</h2>
+				<p class="order" id="o6" ondrop="drop(event)" ondragover="allowDrop(event)"> Order :
+				</p>
+				<button onclick="pay(6)"> Pay </button>
+			</td>
+		</tr>
+	</table>
 
 	<div class="footer">
 		<span>

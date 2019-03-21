@@ -81,7 +81,7 @@ background-color: lightgrey;
     border-color : lightgray;
 }
 
-#t2 
+#t2
 {
 background-color: lightgrey;
     border-color: lightgray;
@@ -97,7 +97,7 @@ background-color: lightgrey;
     border-color: lightgray;
 }
 
-#t5{ 
+#t5{
 background-color: lightgrey;
     border-color:lightgrey;
 }
@@ -146,14 +146,14 @@ width :33%;
 }
 
 .menuView{
-	
+
 	top: 100px;
 	width : 100%;
     overflow-y:scroll;
 }
 
 .menuA{
-	
+
 	width: 20%;
 }
 
@@ -162,4 +162,59 @@ width :33%;
     padding: 3px;
     border-radius: 50%;
     background-color: red;
+}
+
+/* here is the style of the popUp window*/
+.simplePopup {
+	display:none;
+	position:fixed;
+	border:4px solid #808080;
+	background:#556B2F;
+	z-index:3;
+	padding:12px;
+	width:40%;
+	min-width:40%;
+    height: 12%;
+    text-align: center;
+}
+
+.simplePopupClose {
+	float:right;
+	cursor:pointer;
+	margin-left:10px;
+	margin-bottom:10px;
+}
+
+.simplePopupBackground {
+	display:none;
+	background:#808080;
+	position:fixed;
+	height:100%;
+	width:100%;
+	top:0;
+	left:0;
+	z-index:1;
+}
+
+/* here is the button of the pop UP of Checkout*/
+#payYes {
+  width: 15%;
+  height:30%;
+}
+
+#payNo {
+  width: 15%;
+  height:30%;
+}
+
+
+/* here is the button of the pop Up of empty the shopping cart*/
+#emptyYes {
+  width: 15%;
+  height:30%;
+}
+
+#emptyNo {
+  width: 15%;
+  height:30%;
 }

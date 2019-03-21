@@ -65,12 +65,13 @@ function pay(tempid) {
     var x = document.getElementById("o" + tempid);
     var order = $("#o"+tempid).html();
     // window.confirm("The Client pays his order "+x);
-    if (window.confirm("Are you sure you want to place order ?")) {
+    $('#pop1').simplePopup();
+    $('#payYes').on("click", function(event) {
         // the price is set to 0 for a new order
         $("#t" + tempid + " .tsum").text("0 kr.");
         $("#o" + tempid).text("Order :");
         //x.remove(x.selectedIndex);
-    }
+    });
 }
 
 
@@ -177,7 +178,7 @@ function re_order(id, tableId)
 
     // Get the HTML content of the order.
     //
-    
+
     order = $(tempid).html();
     $(tempid+" .supp").show();
     console.log("eda");
@@ -241,7 +242,7 @@ function drop(ev) {
     ev.dataTransfer.dropEffect = "copy";
 
     var data = ev.dataTransfer.getData("text"); // Get the data from the transfer...
-    
+
     // If we use .cloneNode(true) the dragging results in a cloned copy, rather than
     // an actual move of the source. This is important when we use the dragged item as
     // an example, rather than as an individual object.

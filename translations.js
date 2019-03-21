@@ -17,7 +17,7 @@ var trans = {
         "se" : "Kund"
     },
     {
-        "key" : "login",
+        "key" : "vipLogin",
         "en" : "VIP",
         "se" : "VIP"
     },
@@ -155,5 +155,10 @@ var trans = {
         "key" : "redo",
         "en" : "Redo",
         "se" : "Upprepa"
+    },
+    {
+        "key" : "login",
+        "en" : "Login",
+        "se" : "Logga in"
     }]
 }

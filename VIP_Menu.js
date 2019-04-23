@@ -8,19 +8,36 @@ window.onload=function() {
 	// show Credit in the account of this VIP user, "userSEK" is defined in sessionStorage.js line 297
     
     document.getElementById("credit").innerText = userSEK + "Kr";
-
+    var language = localStorage.getItem("lang");
 
     for (var i = 0; i < beverages.length; i++) {
 
-        var liStr = " <li class=\"list_collection\"><div class=\"beverage_card\"><div class=\"beverage_img\"></div><div class=\"beverage_name\"><span class=\"name_data\" id=\"beer_name\">" +
+        // The following if-statement is set in order to change the translation for the beverage list.
+        // The ID did not register in the translation-method (translation.js). Ugly but functional solution.
+
+        if (language == "en") {
+            var liStr = " <li class=\"list_collection\"><div class=\"beverage_card\"><div class=\"beverage_img\"></div><div class=\"beverage_name\"><span class=\"name_data\" id=\"beer_name\">" +
             beverages[i].name + "</span><span \n" +
             "class=\"type\">" +
             " " + beverages[i].catgegory +
             "</span></div><div class=\"year\"><p>" +
             "Year:" + " " + beverages[i].introduced +
             "</p></div><div class=\"price\"><p>" + beverages[i].priceinclvat + " " + "Kr" +
-            "</p></div><div class=\"volume\"><p>" + beverages[i].alcoholstrength + " " + "alcohol" +
+            "</p></div><div class=\"volume\"><p>" + beverages[i].alcoholstrength +
             "</p></div><div class=\"toolBar\"><button class=\"normalbutton add-to-cart\" data-id='" + beverages[i].name + "'>Add to shopping cart</button></div></div></li>";
+        }
+        else {
+            var liStr = " <li class=\"list_collection\"><div class=\"beverage_card\"><div class=\"beverage_img\"></div><div class=\"beverage_name\"><span class=\"name_data\" id=\"beer_name\">" +
+            beverages[i].name + "</span><span \n" +
+            "class=\"type\">" +
+            " " + beverages[i].catgegory +
+            "</span></div><div class=\"year\"><p>" +
+            "År:" + " " + beverages[i].introduced +
+            "</p></div><div class=\"price\"><p>" + beverages[i].priceinclvat + " " + "Kr" +
+            "</p></div><div class=\"volume\"><p>" + beverages[i].alcoholstrength +
+            "</p></div><div class=\"toolBar\"><button class=\"normalbutton add-to-cart\" data-id='" + beverages[i].name + "'>Lägg till i varukorg</button></div></div></li>";
+        }
+
         $('#beverage_list').append(liStr);
         //console.log(liStr);
 

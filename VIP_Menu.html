@@ -40,16 +40,16 @@
 
 <!--Here we add two conditions of popUp: pop1: credit is enough; pop2: insufficient credits--> 
     <div id="pop1" class="simplePopup">
-        <p> Are you sure to pay now? </p>
+        <p id="payNow"> Are you sure to pay now? </p>
         <button id = "payYes"> Yes </button>
         <button id = "payNo"> No </button>
     </div>
     <div id="pop2" class="simplePopup">
-    	<p> You have to top up. Please contact our staff. </p>
+    	<p id="topUp"> You have to top up. Please contact our staff. </p>
     </div>
 <!--Here we add an cart empty confirm popUp -->
 	<div id="pop3" class="simplePopup">
-        <p> Are you sure to empty the shopping cart?</p>
+        <p id="emptySure"> Are you sure to empty the shopping cart?</p>
         <button id = "emptyYes"> Yes </button>
         <button id = "emptyNo"> No </button>
     </div>
@@ -85,8 +85,8 @@
       </ul>
       
       <div class="cart-buttons">
-        <a href="#0" class="button empty-cart-btn">Empty all items</a>
-        <a href="#0" class="button cart-checkout" id="Checkout">Checkout - Total: <span class="total-price">0 Kr</span></a>
+        <a href="#0" class="button empty-cart-btn" id="emptyAll">Empty all items</a>
+        <a href="#0" class="button cart-checkout"><span id="Checkout">Checkout - Total:</span><span class="total-price">0 Kr</span></a>
       </div>
       <!-- add a purchase area
       <div class = "purchase-button" id = "purchaseButton"></div> -->

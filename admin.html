@@ -31,7 +31,7 @@
 	</div>
 
 	<div id="pop1" class="simplePopup">
-		<p> Are you sure you want to place order ? </p>
+		<p id="orderSure"> Are you sure you want to place order ? </p>
 		<button id="payYes"> Yes </button>
 		<button id="payNo"> No </button>
 	</div>
@@ -45,9 +45,9 @@
 				<h2 class="tsum" >
 				0 kr
 				</h2>
-				<p class="order" id="o1" ondrop="drop(event)" ondragover="allowDrop(event)"> Order :
+				<p class="order" id="o1" ondrop="drop(event)" ondragover="allowDrop(event)"> <span id="order">Order :</span>
 				</p>
-				<button onclick="pay(1)"> Pay </button>
+				<button onclick="pay(1)" id="pay"> Pay </button>
 			</td>
 			<td class="tables" id="t2" >
 				<h1 id="table2" class="tname">
@@ -56,9 +56,9 @@
 				<h2 class="tsum" >
 				0 kr
 				</h2>
-				<p class="order" id="o2"ondrop="drop(event)" ondragover="allowDrop(event)"> Order :
+				<p class="order" id="o2"ondrop="drop(event)" ondragover="allowDrop(event)"> <span id="order">Order :</span>
 				</p>
-				<button onclick="pay(2)"> Pay </button>
+				<button onclick="pay(2)" id="pay"> Pay </button>
 			</td>
 			<td rowspan="3" class="menu" id="mt">
 
@@ -95,9 +95,9 @@
 				<h2 class="tsum">
 				0 kr
 				</h2>
-				<p class="order" id="o3" ondrop="drop(event)" ondragover="allowDrop(event)"> Order :
+				<p class="order" id="o3" ondrop="drop(event)" ondragover="allowDrop(event)"> <span id="order">Order :</span>
 				</p>
-				<button onclick="pay(3)" > Pay </button> <!-- <button class="edit" onclick="edit(3)"> Edit </button> -->
+				<button onclick="pay(3)" id="pay" > Pay </button> <!-- <button class="edit" onclick="edit(3)"> Edit </button> -->
 			</td>
 			<td class="tables" id="t4" >
 				<h1 id="table4" class="tname">
@@ -106,9 +106,9 @@
 				<h2 class="tsum">
 				0 kr
 				</h2>
-				<p class="order" id="o4" ondrop="drop(event)" ondragover="allowDrop(event)"> Order :
+				<p class="order" id="o4" ondrop="drop(event)" ondragover="allowDrop(event)"> <span id="order">Order :</span>
 				</p>
-				<button onclick="pay(4)" > Pay </button>
+				<button onclick="pay(4)" id="pay" > Pay </button>
 			</td>
 		</tr>
 		<tr>
@@ -120,9 +120,9 @@
 				0 kr
 				</h2>
 
-				<p class="order" id="o5" ondrop="drop(event)" ondragover="allowDrop(event)"> Order : </p>
+				<p class="order" id="o5" ondrop="drop(event)" ondragover="allowDrop(event)"> <span id="order">Order :</span> </p>
 
-				<button onclick="pay(5)"> Pay </button>
+				<button onclick="pay(5)" id="pay"> Pay </button>
 			</td>
 			<td class="tables" id="t6" id="t6" >
 				<h1 id="table6" class="tname">
@@ -131,9 +131,9 @@
 				<h2 class="tsum">
 				0 kr
 				</h2>
-				<p class="order" id="o6" ondrop="drop(event)" ondragover="allowDrop(event)"> Order :
+				<p class="order" id="o6" ondrop="drop(event)" ondragover="allowDrop(event)"> <span id="order">Order :</span>
 				</p>
-				<button onclick="pay(6)"> Pay </button>
+				<button onclick="pay(6)" id="pay"> Pay </button>
 			</td>
 		</tr>
 	</table>

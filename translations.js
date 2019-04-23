@@ -137,7 +137,17 @@ var trans = {
         "se" : "Användarnamn"
     },
     {
+        "key" : "username",
+        "en" : "Username",
+        "se" : "Användarnamn"
+    },
+    {
         "key" : "password",
+        "en" : "Password",
+        "se" : "Lösenord"
+    },
+    {
+        "key" : "psw",
         "en" : "Password",
         "se" : "Lösenord"
     },
@@ -160,5 +170,80 @@ var trans = {
         "key" : "login",
         "en" : "Login",
         "se" : "Logga in"
+    },
+    {
+        "key" : "myInput",
+        "en" : "Search for beverage…",
+        "se" : "Sök efter dryck…"
+    },
+    {
+        "key" : "shoppingCart",
+        "en" : "Add to shopping cart",
+        "se" : "Lägg till i varukorg"
+    },
+    {
+        "key" : "year",
+        "en" : "Year:",
+        "se" : "År:"
+    },
+    {
+        "key" : "emptyAll",
+        "en" : "Empty all items",
+        "se" : "Töm varukorgen"
+    },
+    {
+        "key" : "Checkout",
+        "en" : "Checkout - Total: ",
+        "se" : "Betala - Total: "
+    },
+    {
+        "key" : "payNow",
+        "en" : "Are you sure you want to pay now?",
+        "se" : "Är du säker på att du vill betala nu?"
+    },
+    {
+        "key" : "orderSure",
+        "en" : "Are you sure you want to place the order?",
+        "se" : "Är du säker på att du vill lägga beställningen?"
+    },
+    {
+        "key" : "payYes",
+        "en" : "Yes",
+        "se" : "Ja"
+    },
+    {
+        "key" : "payNo",
+        "en" : "No",
+        "se" : "Nej"
+    },
+    {
+        "key" : "topUp",
+        "en" : "You have to top up. Please contact our staff.",
+        "se" : "Du måste fylla på ditt innestående belopp. Vänligen kontakta vår personal."
+    },
+    {
+        "key" : "emptySure",
+        "en" : "Are you sure you want to empty the shopping cart?",
+        "se" : "Är du säker på att du vill tömma din varukorg?"
+    },
+    {
+        "key" : "emptyYes",
+        "en" : "Yes",
+        "se" : "Ja"
+    },
+    {
+        "key" : "emptyNo",
+        "en" : "No",
+        "se" : "Nej"
+    },
+    {
+        "key" : "order",
+        "en" : "Order: ",
+        "se" : "Beställning: "
+    },
+    {
+        "key" : "pay",
+        "en" : "Pay",
+        "se" : "Betala"
     }]
 }

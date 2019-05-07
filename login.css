@@ -88,6 +88,40 @@ span.psw {
   padding-top: 1em;
 }
 
+/* here is the style of the popUp window*/
+.simplePopup {
+  display:none;
+  position:fixed;
+  border:4px solid #808080;
+  background:#556B2F;
+  z-index:3;
+  padding:12px;
+  width:40%;
+  min-width:40%;
+  height: 6%;
+  text-align: center;
+}
+
+.simplePopupClose {
+  float:right;
+  cursor:pointer;
+  margin-left:10px;
+  margin-bottom:10px;
+}
+
+.simplePopupBackground {
+  display:none;
+  background:#808080;
+  position:fixed;
+  height:100%;
+  width:100%;
+  top:0;
+  left:0;
+  z-index:1;
+}
+
+
+
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (min-width: 1400px) {
   header{

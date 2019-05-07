@@ -79,6 +79,7 @@ function pay(tempid) {
 
 function supp(id) {
    var  o= $("#newId"+id).html();
+   console.log(o);
   //  if(window.confirm("supp " +o)){
         var p=getPrices(o);
 
@@ -119,7 +120,7 @@ function undo(){
     }
 }
 
-function redo(){
+function redo(){ 
     var top = redoStack.pop();
     if(top.type == "supp")
     {
@@ -129,7 +130,7 @@ function redo(){
     else if (top.type == "order")
     {
         supp(top.id);
-    }
+    }   
 }
 
 function resupp(id) {
@@ -257,7 +258,6 @@ function drop(ev) {
     nodeCopy.id = "newId"+x;
 
     nodeCopy.draggable = "false"; // The new element is set as being not draggable.
-
     console.log(ev.target);
     ev.target.appendChild(nodeCopy);
 

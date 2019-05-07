@@ -276,3 +276,16 @@ body {
   border-radius: 5px;
   padding: 10px;
 }
+.del{
+  position: absolute;
+  right: 4px;
+  top: 0;
+  color: #fff;
+  background-color: red;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  text-align: center;
+  font-size: 15px;
+  cursor: pointer;
+}

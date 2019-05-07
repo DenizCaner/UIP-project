@@ -11,13 +11,14 @@ function validateAdminFormOnSubmit(theForm){
                 window.location.assign("./admin.html");
                 return false;
         	}
-        	alert("You are not an admin.");
-        	return;
+            // chang from an alert to a popup window
+            $('#popNotAdmin').simplePopup();
+        	return false;
         }
     }
-
-    alert("Wrong username or password.");
-    return;
+    // chang from an alert to a popup window
+    $('#popWrongUser').simplePopup();
+    return false;
 }
 
 function validateFormOnSubmit(theForm){
@@ -34,7 +35,8 @@ function validateFormOnSubmit(theForm){
             return false;
         }
     }
-
-    alert("Wrong username or password.");
-    return;
+    // chang from an alert to a popup window
+    $('#popWrongUser').simplePopup();
+    return false;
 }
+

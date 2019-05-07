@@ -1,5 +1,8 @@
 
- 
+ var dragItem = {};
+ var undoStack = [];
+ var redoStack = [];
+
 // this function help to transfer JSON data to html frame and append it, var beverages
 
 window.onload=function() {
@@ -16,7 +19,7 @@ window.onload=function() {
         // The ID did not register in the translation-method (translation.js). Ugly but functional solution.
 
         if (language == "en") {
-            var liStr = " <li class=\"list_collection\"><div class=\"beverage_card\"><div class=\"beverage_img\"></div><div class=\"beverage_name\"><span class=\"name_data\" id=\"beer_name\">" +
+            var liStr = " <li class=\"list_collection\" draggable=\"true\" ondragstart=\"drag(this)\"><div class=\"beverage_card\"><div class=\"beverage_img\"></div><div class=\"beverage_name\"><span class=\"name_data\" id=\"beer_name\">" +
             beverages[i].name + "</span><span \n" +
             "class=\"type\">" +
             " " + beverages[i].catgegory +
@@ -27,7 +30,7 @@ window.onload=function() {
             "</p></div><div class=\"toolBar\"><button class=\"normalbutton add-to-cart\" data-id='" + beverages[i].name + "'>Add to shopping cart</button></div></div></li>";
         }
         else {
-            var liStr = " <li class=\"list_collection\"><div class=\"beverage_card\"><div class=\"beverage_img\"></div><div class=\"beverage_name\"><span class=\"name_data\" id=\"beer_name\">" +
+            var liStr = " <li class=\"list_collection\" draggable=\"true\" ondragstart=\"drag(this)\"><div class=\"beverage_card\"><div class=\"beverage_img\"></div><div class=\"beverage_name\"><span class=\"name_data\" id=\"beer_name\">" +
             beverages[i].name + "</span><span \n" +
             "class=\"type\">" +
             " " + beverages[i].catgegory +
@@ -109,15 +112,23 @@ window.onload=function() {
         cartEl.innerHTML = ""; //write the shopping cart list in html
 
         beverageInCart.forEach(function(item) {  // list each item in array by using forEach() method
-            var li = document.createElement("li"); // create a <li> element in html
-            li.innerHTML = `${item.quantity} ${item.beverage.name} - ${item.beverage.priceinclvat * item.quantity} Kr `;
-            cartEl.appendChild(li);
+            // var li = document.createElement("li"); // create a <li> element in html
+            // li.innerHTML = `${item.quantity} ${item.beverage.name} - ${item.beverage.priceinclvat * item.quantity} Kr`;
+            var liHTML = '<li style="position:relative" data-id="'+item.beverage.name+'">'+`${item.quantity} ${item.beverage.name} - ${item.beverage.priceinclvat * item.quantity} Kr`+'<div class="del">×</div></li>'
+            //li.innerHTML = '<div><span>' + item.beverage.name + ' ' + item.beverage.priceinclvat + ' Kr'  + '<button class=\"supp\"  > X</button>' + '</span></div>'
+            //console.log(li);
+            $(cartEl).append(liHTML)
+
+
         }); // use `string text ${expression} string text` as template literals, to show the quantity, the name and the price (price*quantity)
 
         productQuantityEl.innerHTML = beverageInCart.length; // the quantity of product equals to the number of beverages in cart 
 
         generateCartButtons(); //generate the checkout button
     }
+
+
+
     var generateCartButtons = function() { //make the button hidden if there's nothing in shopping cart
         if(beverageInCart.length > 0) {
             emptyCartEl.style.display = "block";
@@ -130,7 +141,7 @@ window.onload=function() {
     }
     // Setting up listeners for click event on all products and Empty Cart button as well
     var setupListeners = function() {
-
+        
         var blist = document.querySelector('#beverage_list'); // define
         blist.addEventListener("click", function(event) { // when clicking, an event is triggered
 
@@ -163,7 +174,8 @@ window.onload=function() {
 
     }
 
-    var addToCart = function(name){ //define the addToCart
+    window.addToCart = function(name){ //define the addToCart
+        // debugger
         if (beverageInCart.length === 0){
             //The length of shopping cart is o at the beginning, and then a beverage will be added
             //console.log(findBeverage(name));
@@ -182,9 +194,13 @@ window.onload=function() {
                 beverageInCart.push({'beverage':findBeverage(name), "quantity":1});
             }
         }
+        var temp = $.extend(true, [], beverageInCart);
+        undoStack.push(temp);
+        console.log(undoStack);
+        redoStack=[];
         generateCartList();
     }
-    var findBeverage = function(name){
+    window.findBeverage = function(name){
         var ret;
         beverages.forEach(function (item,index){
            if (item.name === name){
@@ -221,11 +237,50 @@ window.onload=function() {
 			$('#pop2').simplePopup();  // pop up "you have to top up."
 		}
     })
-
-   
+    $("#undo").click(function(){
+        if(undoStack.length>0){
+            var top = undoStack.pop();
+            redoStack.push(top);
+            beverageInCart = undoStack[undoStack.length-1] ||[];
+            generateCartList();
+        }
+        
+    })
+    $("#redo").click(function(){
+        if(redoStack.length>0){
+            var top = redoStack.pop();
+            undoStack.push(top);
+            beverageInCart = top;
+            generateCartList();
+        }
+        
+    })
+    $(".shopping-cart-list").on("click",".del",function(){
+        $(this).closest('li').remove();
+        var temp = $(this).closest('li').attr("data-id");
+        console.log(beverageInCart)
+        for(var i=0;i<beverageInCart.length;i++){
+            if(beverageInCart[i].beverage.name==temp){
+                beverageInCart.splice(i, 1);
+            }
+        }
+        var temp = $.extend(true, [], beverageInCart);
+        undoStack.push(temp);
+        redoStack=[];
+        generateCartList();
+    })
 }
 
 
+function allowDrop(e){
+    e.preventDefault();
+}
+function drag(t){
+    dragItem = $(t).find('.add-to-cart').attr("data-id");
+}
+function drop(){
+    addToCart(dragItem);
+}
 
 		
 

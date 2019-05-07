@@ -26,6 +26,8 @@
     <div id="title" class="pubname">
         <span>The Flying Dutchman</span>
         <button type="button" id = "logOut" onclick="location.href = 'customer.html';"></button>
+        <button type="button" id = "undo">undo</button>
+		<button type="button" id = "redo">redo</button>
     </div>  
 
 </header>
@@ -64,7 +66,8 @@
 </div>
 
 <div>
-    <ul id="beverage_list"></ul>
+    <ul id="beverage_list">
+    </ul>
 </div>
 
 
@@ -76,7 +79,7 @@
 
 <!--here we add a "shopping cart" container-->
  
-<div class="shopping-cart">
+<div class="shopping-cart" ondrop="drop()" ondragover="allowDrop(event)">
     <div class="shopping-cart-head">
         <span class="product-quantity">0</span><span id="beveragesInCart"></span>
       </div>

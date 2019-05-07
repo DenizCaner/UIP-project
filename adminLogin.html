@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>The Flying Dutchman</title>
-
     <script type="text/javascript" src="jquery-1.11.1.js"></script>
+    <!-- Scripts for pop up Jquery -->
+    <script type="text/javascript" src="jquery.simplePopup.js"></script>
     <script type="text/javascript" src="DBLoaded.js"></script>
     <script type="text/javascript" src="adminlogin.js"></script>
 
@@ -32,6 +33,7 @@ then you can enter javascript calls, to test the functions.
 -->
 
 	<div class="pubname" id="pubname">The Flying Dutchman</div>
+
 	<div class="logincontainer">
 	    <div class="innerLoginContainer">
 	        <form name="adminLogin" onsubmit="return validateAdminFormOnSubmit(this)" method="post">
@@ -44,12 +46,19 @@ then you can enter javascript calls, to test the functions.
 	           		<input type="password" placeholder="Enter Password" id="password" name="password" required>
 	                
 	          		<button type="submit" name="login" id="login"></button>
-
 	          		<a id="return" href="./customer.html"></a>
 	        	</div>
 	      	</form>
 	    </div>
 	</div>
+
+    <!---  add pop up windows -->
+    <div id="popNotAdmin" class="simplePopup">
+        <p id="notAdmin"> You are not an admin. </p>
+    </div>
+    <div id="popWrongUser" class="simplePopup">
+        <p id="wrongUser"> Wrong username or password. </p>
+    </div>
 
 	<div class="footer">
     <span>

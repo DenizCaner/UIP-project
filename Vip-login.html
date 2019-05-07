@@ -10,6 +10,8 @@
 	<link rel="stylesheet" type="text/css" href="login.css">
 
   <script type="text/javascript" src="jquery-1.11.1.js"></script>
+  <!-- Scripts for pop up Jquery -->
+  <script type="text/javascript" src="jquery.simplePopup.js"></script>
   <script type="text/javascript" src="DBLoaded.js"></script>
   <script type="text/javascript" src="adminlogin.js"></script>
   <script type="text/javascript" src="sessionStorage.js"></script>
@@ -36,11 +38,15 @@
           <input type="password" placeholder="Enter Password" id="password" name="psw" required>
                 
           <button type="submit" id="login"></button>
-
           <a id="return" href="./customer.html"></a>
         </div>
       </form>
-    </div>
+    </div>    
+  </div>
+  
+  <!--This is a pop up window-->
+  <div id="popWrongUser" class="simplePopup">
+      <p id="wrongUser"> Wrong username or password. </p>
   </div>
 
   <div class="footer">

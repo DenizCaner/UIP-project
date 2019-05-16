@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The Flying Dutchman</title>
+    <script type="text/javascript" src="jquery-1.11.1.js"></script>
+    <!-- Scripts for pop up Jquery -->
+    <script type="text/javascript" src="jquery.simplePopup.js"></script>
+    <script type="text/javascript" src="DBLoaded.js"></script>
+    <script type="text/javascript" src="adminlogin.js"></script>
+
+    <!-- Scripts for translation -->
+    <script type="text/javascript" src="translations.js"></script>
+    <script type="text/javascript" src="translation.js"></script>
+    
+    <!-- Style sheets -->
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="login.css">
+
+</head>
+
+<body>
+
+<!---
+
+The html-file is just for loading the javascript files. If you go to the console under the "Inspect" of the popup menu,
+then you can enter javascript calls, to test the functions.
+
+-->
+
+	<div class="pubname" id="pubname">The Flying Dutchman</div>
+
+	<div class="logincontainer">
+	    <div class="innerLoginContainer">
+	        <form name="adminLogin" onsubmit="return validateAdminFormOnSubmit(this)" method="post">
+	        	<h2 id="h2_login"></h2>
+	        	<div class="container">
+	          		<label for="uname" id="uname"></label>
+	          		<input type="text" placeholder="Enter Username" id="username" name="username" required>
+
+	          		<label for="psw" id="psw"></label>
+	           		<input type="password" placeholder="Enter Password" id="password" name="password" required>
+	                
+	          		<button type="submit" name="login" id="login"></button>
+	          		<a id="return" href="./customer.html"></a>
+	        	</div>
+	      	</form>
+	    </div>
+	</div>
+
+    <!---  add pop up windows -->
+    <div id="popNotAdmin" class="simplePopup">
+        <p id="notAdmin"> You are not an admin. </p>
+    </div>
+    <div id="popWrongUser" class="simplePopup">
+        <p id="wrongUser"> Wrong username or password. </p>
+    </div>
+
+	<div class="footer">
+    <span>
+      <img src="images/united-kingdom.png" alt="UK flag icon.">
+      <button class="eng">English</button>
+    </span>
+    <span>
+      <img src="images/sweden.png" alt="Sweden flag icon.">
+      <button class="swe">Svenska</button>
+    </span>
+  </div>
+
+</body>
+
+</html>
+

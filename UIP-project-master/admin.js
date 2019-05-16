@@ -19,53 +19,87 @@ function eventItem(id, tableId, type) {
 $(function () {
 
     $(".supp").hide();
+   /* $("#o1").hide();
+    $("#o2").hide();
+    $("#o3").hide();
+    $("#o4").hide();
+    $("#o5").hide();
+    $("#o6").hide();
+
+    $("#t1").click(function () {
+        $("#o1").toggle("slow");
+    });
+
+    $("#t2").click(function () {
+        $("#o2").toggle("slow");
+    });
+
+    $("#t3").click(function () {
+        $("#o3").toggle("slow");
+    });
+
+    $("#t4").click(function () {
+        $("#o4").toggle("slow");
+    });
+
+    $("#t5").click(function () {
+        $("#o5").toggle("slow");
+    });
+    $("#t6").click(function () {
+        $("#o6").toggle("slow");
+    });*/
 
 });
 
-// Returns the table number for the order with the same number.
-function orderTable (orderId) { 
+function orderTable (orderId) { // Returns the table number for the order with the same number.
     temp = orderId.split("");
     return "#t"+ temp[2];
 }
 
-// Returns the order number for the table with the same number.
-function tableOrder (tableId) { 
+function tableOrder (tableId) { // Returns the order number for the table with the same number.
     temp = tableId.split("");
     return "#o"+ temp[2];
 }
 
-// reset order on the table after paying
-function pay(tempid) { 
+function pay(tempid) {
     var x = document.getElementById("o" + tempid);
     var order = $("#o"+tempid).html();
+    // window.confirm("The Client pays his order "+x);
     $('#pop1').simplePopup();
     $('#payYes').on("click", function(event) {
         // the price is set to 0 for a new order
         $("#t" + tempid + " .tsum").text("0 kr.");
         $("#o" + tempid).text("Order :");
+        //x.remove(x.selectedIndex);
     });
 }
 
-// remove element from the order 
+
+
+
 function supp(id) {
-	var  o= $("#newId"+id).html();
-	console.log(o);
-	var p=getPrices(o);
-	var x = document.getElementById("newId"+id).parentElement.id;
+   var  o= $("#newId"+id).html();
+   console.log(o);
+  //  if(window.confirm("supp " +o)){
+        var p=getPrices(o);
 
-	var orderId=x.slice(1, x.length);
-    console.log(orderId);
+        var x = document.getElementById("newId"+id).parentElement.id;
 
-    order = $("#"+x).html();
+        var orderId=x.slice(1, x.length);
+        console.log(orderId);
 
-    prices = getPrices(order);
-    sum = sumTotal(prices);
-    var price = parseInt(p[0].innerText);
+        order = $("#"+x).html();
 
-    $("#t"+orderId+" .tsum").text(sum-price+" kr.");
-    $("#newId"+id).remove();
-    console.log("#newId"+id);
-    undoStack.push(new eventItem(id, orderId, "supp"));
+        prices = getPrices(order);
+        sum = sumTotal(prices);
+        var price = parseInt(p[0].innerText);
+
+        $("#t"+orderId+" .tsum").text(sum-price+" kr.");
+        $("#newId"+id).remove();
+        console.log("#newId"+id);
+        undoStack.push(new eventItem(id, orderId, "supp"));
+  //  }
+
 
 }
 
@@ -100,24 +134,27 @@ function redo(){
 }
 
 function resupp(id) {
-	var  o= $("#newId"+id).html();
-	var p=getPrices(o);
+   var  o= $("#newId"+id).html();
+  //  if(window.confirm("supp " +o)){
+        var p=getPrices(o);
 
-	var x = document.getElementById("newId"+id).parentElement.id;
+        var x = document.getElementById("newId"+id).parentElement.id;
 
-	var orderId=x.slice(1, x.length);
-	console.log(orderId);
+        var orderId=x.slice(1, x.length);
+        console.log(orderId);
 
-	order = $("#"+x).html();
+        order = $("#"+x).html();
 
-    prices = getPrices(order);
-    sum = sumTotal(prices);
-    var price = parseInt(p[0].innerText);
+        prices = getPrices(order);
+        sum = sumTotal(prices);
+        var price = parseInt(p[0].innerText);
 
-    $("#t"+orderId+" .tsum").text(sum-price+" kr.");
-    $("#newId"+id).remove();
-    console.log("#newId"+id);
-    redoStack.push(new eventItem(id, orderId, "supp"));
+        $("#t"+orderId+" .tsum").text(sum-price+" kr.");
+        $("#newId"+id).remove();
+        console.log("#newId"+id);
+        redoStack.push(new eventItem(id, orderId, "supp"));
+  //  }
+
 
 }
 
@@ -166,12 +203,24 @@ function re_order(id, tableId)
 //////////////////////////////////////////////////////////////////////////////////////////////////
 // DRAG AND DROP STARTS HERE
 
-// This makes the item accept drop actions.
+
+
+/**
+ * Created by LOe on 01/12/15.
+ */
+//
+// A standard function. If you don't want any "extras", just use this
+// as it is. It will prevent the default behaviour, which is not to accept
+// any drops.
+//
+//var x= 0;
 function allowDrop(ev) {
-    ev.preventDefault(); 
+    ev.preventDefault(); // This makes the item accept drop actions.
 }
 
-
+// A standard function. It packages the ID of the source into the data
+// transfer package. The type of the transferred data is pure text.
+//
 function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
 }
@@ -183,42 +232,43 @@ function drag(ev) {
 // All information about the drop event is kept in an object that is received upon dropping.
 // The ev argument is used throughout the drop function.
 //
-function drop(ev,el) {
+function drop(ev) {
 
+    // The default action is to not accept drops, så
     ev.preventDefault();
 
-    // Copy menu items, rather than moving them.
+    // This allows for copying menu items, rather than moving them.
+    // Comment out this line to see the difference.
+    //
     ev.dataTransfer.dropEffect = "copy";
 
     var data = ev.dataTransfer.getData("text"); // Get the data from the transfer...
 
-	// create new node that will be happened to the target 
+    // If we use .cloneNode(true) the dragging results in a cloned copy, rather than
+    // an actual move of the source. This is important when we use the dragged item as
+    // an example, rather than as an individual object.
+    //
     var nodeCopy = document.getElementById(data).cloneNode(true);
     var idElt = nodeCopy.id;
 
     var tempid = "#" + ev.target.id;
     var x= idElt.slice(8,idElt.length);
     console.log(tempid);
-
+    // get the order where the item is drop
     nodeCopy.id = "newId"+x;
 
     nodeCopy.draggable = "false"; // The new element is set as being not draggable.
     console.log(ev.target);
-    el.appendChild(nodeCopy);
+    ev.target.appendChild(nodeCopy);
+
+    // Get the ID of the target (the order).
+    //
+
+    //window.confirm("drop here "+ev.target.id);
 
     // Get the HTML content of the order.
     //
-	// add delete button to the new item
-	var div = document.getElementById("newId"+x);
-	console.log("div", div);
-	var parent = div.parentNode;
-	var newDiv = document.createElement("Button");
-	newDiv.innerHTML="X";
-	document.getElementById("newId"+x).appendChild(newDiv);
-	console.log("new", newDiv);
-	console.log(document.getElementById("newId"+x));
-    
-	order = $(tempid).html();
+    order = $(tempid).html();
     $(tempid+" .supp").show();
     undoStack.push(new eventItem(nodeCopy.id[5], tempid[2], "order"));
     // Get the prices from the order.
@@ -235,12 +285,17 @@ function drop(ev,el) {
 
 }
 
-// Get the list of prices from all the current elements.
+// Get the list of prices from all the currentorders.
 //
 function getPrices (htmlString) {
 
+    // We create a new jQuery object and put the HTML string into it.
+    //
     var el = $( '<div></div>' );
     el.html(htmlString);
+
+    // Then we can use jQuery to find all elements in this string.
+    //
     return $('.price', el); // All the price elements
 }
 

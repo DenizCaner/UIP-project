@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="menu.js"></script>
+    <script type="text/javascript" src="VIP_Menu.js"></script>
+    <script type="text/javascript" src="jquery-1.11.1.js"></script>
+    <!-- add popup jquery-->
+    <script type="text/javascript" src="jquery.simplePopup.js"></script>
+    <script type="text/javascript" src="DBLoaded.js"></script>
+    <script type="text/javascript" src="sessionStorage.js"></script>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="VIP_Menu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Scripts for translation -->
+    <script type="text/javascript" src="translations.js"></script>
+    <script type="text/javascript" src="translation.js"></script>
+
+    <title>Menu for VIP</title>
+</head>
+
+<header>
+    <div id="title" class="pubname">
+        <span>The Flying Dutchman</span>
+        <button type="button" id = "logOut" onclick="location.href = 'customer.html';"></button>
+        <button type="button" id = "undo">undo</button>
+		<button type="button" id = "redo">redo</button>
+    </div>  
+
+</header>
+ 
+<div class="searchbar">
+    <input type="text" id="myInput" placeholder="Search for beverage…">   
+</div>
+
+<body>
+
+<div class="account">
+
+<!--Here we add two conditions of popUp: pop1: credit is enough; pop2: insufficient credits--> 
+    <div id="pop1" class="simplePopup">
+        <p id="payNow"> Are you sure to pay now? </p>
+        <button id = "payYes"> Yes </button>
+        <button id = "payNo"> No </button>
+    </div>
+    <div id="pop2" class="simplePopup">
+    	<p id="topUp"> You have to top up. Please contact our staff. </p>
+    </div>
+<!--Here we add an cart empty confirm popUp -->
+	<div id="pop3" class="simplePopup">
+        <p id="emptySure"> Are you sure to empty the shopping cart?</p>
+        <button id = "emptyYes"> Yes </button>
+        <button id = "emptyNo"> No </button>
+    </div>
+
+<!--Here we implement the account information from the localStorage(user info) and sessionStorage(user id + credit) -->
+    <span id="accountWelcome">Welcome, </span>
+    <script>
+        document.write(localStorage.getItem('username') + "! ");
+    </script>
+    <span id="accountCredit"></span><span id="credit"></span>
+
+</div>
+
+<div>
+    <ul id="beverage_list">
+    </ul>
+</div>
+
+
+<!--here we add a "go to top" button-->
+
+<div class="top">
+    <span title="Top" id="topArrow"></span>
+</div>
+
+<!--here we add a "shopping cart" container-->
+ 
+<div class="shopping-cart" ondrop="drop()" ondragover="allowDrop(event)">
+    <div class="shopping-cart-head">
+        <span class="product-quantity">0</span><span id="beveragesInCart"></span>
+      </div>
+      
+      <ul class="shopping-cart-list">
+      </ul>
+      
+      <div class="cart-buttons">
+        <a href="#0" class="button empty-cart-btn" id="emptyAll">Empty all items</a>
+        <a href="#0" class="button cart-checkout"><span id="Checkout">Checkout - Total:</span><span class="total-price">0 Kr</span></a>
+      </div>
+      <!-- add a purchase area
+      <div class = "purchase-button" id = "purchaseButton"></div> -->
+
+    
+</div>
+
+    
+<!--an empty div to make footer not hinder the beverage list, just temporary method-->
+<div class="pageEnd"> "            " 
+    <br> "            "
+    </br>
+</div>
+
+<!--footer -->
+
+    <div class="footer">
+        <span>
+          <img src="images/united-kingdom.png" alt="UK flag icon.">
+          <button class="eng">English</button>
+        </span>
+        <span>
+            <img src="images/sweden.png" alt="Sweden flag icon.">
+          <button class="swe">Svenska</button>
+        </span>
+    </div>
+</body>
+</html>
+

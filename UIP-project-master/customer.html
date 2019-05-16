@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8">
+	
+	<title>The Flying Dutchman</title>
+	<script type="text/javascript" src="jquery-1.11.1.js"></script>
+
+	<script type="text/javascript" src="menu.js"></script>
+	<script type="text/javascript" src="ModelFunctions.js"></script>
+	<script type="text/javascript" src="customer.js"></script>
+
+	<script language="Javascript" type="text/Javascript" src="translations.js"></script>
+	<script language="Javascript" type="text/Javascript" src="translation.js"></script>
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<link rel="stylesheet" type="text/css" href="customer.css">
+
+</head>
+
+<body>
+
+	<div id="title" class="pubname">
+		<button type="button" id = "vipLogin" onclick="location.href = './Vip-login.html';"></button>
+		<button type="button" id = "adminlogin" onclick="location.href = './adminLogin.html';"></button>
+		<span id="welcome">
+			The Flying Dutchman
+		</span>
+	</div>
+
+	<div class="Mainbody">
+		
+		<div class="foodmenucontainer">
+			<div id="foodmenutabs">
+    			<ul id="mtabs">
+        			<li id="starters"></li>
+        			<li id="maincourses"></li>
+        			<li id="desserts"></li>
+    			</ul>
+			</div>
+
+			<div class="foodmenu" id="starter"></div>
+
+			<div class="foodmenu" id="maincourse"></div>
+
+			<div class="foodmenu" id="dessert"></div>
+		</div>
+
+
+		<div class="beveragesmenucontainer">
+			<div id="beveragesmenutabs">
+    			<ul id="mtabs">
+    				<li id="beers"></li>
+        			<li id="whiskys"></li>
+        			<li id="sprits"></li>
+    			</ul>
+			</div>
+
+
+			<div class="beveragesmenu" id="beer"> </div>
+
+			<div class="beveragesmenu" id="whisky"> </div>
+
+			<div class="beveragesmenu" id="sprit"> </div>
+
+		</div>
+
+		
+		<div class="footer">
+		    <span>
+		      <img src="images/united-kingdom.png" alt="UK flag icon.">
+		      <button class="eng">English</button>
+		    </span>
+		    <span>
+		      <img src="images/sweden.png" alt="Sweden flag icon.">
+		      <button class="swe">Svenska</button>
+		    </span>
+		</div>
+	</div>
+	
+</body>
+</html>

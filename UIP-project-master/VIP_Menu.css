@@ -1,0 +1,291 @@
+/* here added the background image */
+body {
+  background-image: url("./images/background_image.jpg");
+  background-repeat: repeat;
+  background-size: cover;
+}
+
+/* here is the style of the welcome header */
+
+#title {
+  text-align: left;
+}
+
+#title span {
+  margin-left: 1em;
+}
+
+#title button {
+  background-color: #556B2F;
+  border: none;
+  color: navajowhite;
+  font-size: 0.5em;
+  margin: 0.5em 2em 0.5em 0em;
+  float: right;
+}
+
+#title button:hover {
+  opacity: 0.5;
+}
+
+.account {
+    font-family: "Arial";
+    font-weight: bold;
+    color: #EBEBE0;
+}
+
+.beverage_list {
+    font-family: "Arial";
+}
+
+
+/* here is the style of the searchbar */
+
+
+.searchbar {
+    margin:auto;
+    width:40%;
+}
+
+
+.account {
+    margin:auto;
+    width: 25%;
+    padding: 12px 12px 12px 12px;
+    margin-top:15px;
+    width:40%;
+    
+}
+
+#myInput {
+    margin-left: auto;
+    margin-right: auto;
+    background-repeat: no-repeat;
+    background-color: #ebebe0;
+    width: 40%;
+    font-size: 16px;
+    padding: 12px 20px 12px 12px;
+    border: 1px solid #ddd;
+    margin-top:15px;  
+}
+
+
+
+/* here discard the bullet point of each list */
+    ul {
+    list-style-type: none;
+    }
+
+
+
+  .beverage_card{
+        margin: 0 auto;
+        background-color: #ebebe0; 
+        overflow:auto;
+        position:relative;
+        margin-top:15px;
+        width:40%;
+        height:100px;
+    }
+    .beverage_img{
+        width:20%;
+        height:100%;
+        background-color:#556B2F;
+        position:absolute;
+        left:0%;
+    }
+    .beverage_name{
+        width:60%;
+        height:15%;
+
+        position:absolute;
+        left:21%;
+    }
+    .name_data{
+        font-weight: bolder;
+    }
+    .year{
+        width:60%;
+        height:30%;
+
+        position:absolute;
+        left:21%;
+        top:16%;
+        color:grey;
+    }
+    .price{
+        position: absolute;
+        right:3%;
+        height:15%;
+
+        font-weight: bolder;
+    }
+    .volume{
+        position: absolute;
+        top:16%;
+        right:3%;
+        height:30%;
+        font-size:16px;
+
+    }
+    .toolBar{
+        position:absolute;
+        right:3%;
+        bottom: 10%;
+    }
+
+	.normalbutton{
+		background-color: #556B2F; /* Same color with pubname */
+	  	border: none;
+	  	color: white;
+	  	padding: 5px 10px;
+	  	text-align: center;
+	  	text-decoration: none;
+	  	display: inline-block;
+	  	font-size: 10px;
+	  	margin: 4px 2px;
+	  	cursor: pointer;
+	}
+
+
+    /* This is the style of the "go to top" button */
+    .top{
+    width: 50px;
+    height: 80px;
+    background-color: #556B2F;
+    border-radius: 10px;
+    position: fixed;
+    right: 100px;
+    bottom: 10%;
+    }
+
+    .top #topArrow{
+    width: 30px;
+    height: 30px;
+    border-top: 2px solid #fff; /*draw the arror*/
+    border-left: 2px solid #fff;
+    display: inline-block;
+    transform: translate(9px,35px) rotate(45deg);
+    cursor: pointer;
+    z-index: 1000;
+    }
+
+    .top #topArrow:hover{
+    border-width: 4px;
+    }
+
+/* here is the style of the popUp window*/
+	.simplePopup {
+	display:none;
+	position:fixed;
+	border:4px solid #808080;
+	background:#556B2F;
+	z-index:3;
+	padding:12px;
+	width:40%;
+	min-width:40%;
+  height: 12%;
+  text-align: center;
+	}
+
+	.simplePopupClose {
+	float:right;
+	cursor:pointer;
+	margin-left:10px;
+	margin-bottom:10px;
+	}
+
+	.simplePopupBackground {
+	display:none;
+	background:#808080;
+	position:fixed;
+	height:100%;
+	width:100%;
+	top:0;
+	left:0;
+	z-index:1;
+}
+
+/* here is the button of the pop UP of Checkout*/
+
+#payYes {
+  width: 15%;
+  height:30%;
+}
+
+#payNo {
+  width: 15%;
+  height:30%;
+}
+
+
+/* here is the button of the pop Up of empty the shopping cart*/
+
+
+#emptyYes {
+  width: 15%;
+  height:30%;
+}
+
+#emptyNo {
+  width: 15%;
+  height:30%;
+}
+
+
+/* here is the style of the shopping cart */
+
+.shopping-cart {
+  position: fixed;
+  top: 80px;
+  right: 0;
+  width: 15%;
+  min-heigh: 300px;
+  margin-right: 20px;
+  margin-top: 10px;
+  padding: 20px;
+  background: #ebebe0;
+  font-size: 85%;
+}
+
+.shopping-cart-head {
+  background: #0066cc;
+  color: white;
+  padding: 5px;
+}
+
+.shopping-cart,
+.shopping-cart-head {
+  border-radius: 5px;
+}
+
+.empty-cart-btn,
+.cart-checkout {
+  display: none;
+  
+}
+
+.empty-cart-btn {
+  margin-bottom: 5px;
+  color: tomato;
+}
+
+.cart-checkout {
+  background: #556B2F;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+}
+.del{
+  position: absolute;
+  right: 4px;
+  top: 0;
+  color: #fff;
+  background-color: red;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  text-align: center;
+  font-size: 15px;
+  cursor: pointer;
+}

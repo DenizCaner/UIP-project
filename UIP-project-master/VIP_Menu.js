@@ -280,7 +280,6 @@ function drag(t){
 }
 function drop(){
     addToCart(dragItem);
-
 }
 
 		

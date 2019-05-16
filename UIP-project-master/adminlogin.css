@@ -1,0 +1,29 @@
+form {
+	border: 1em;
+}
+
+#loginButton {
+  background-color: #4CAF50;
+  color: white;
+  padding: 1em 2em;
+  margin: 1em 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+#return {
+	background-color: #0d5fe2;
+	color: white;
+	padding: 0.5em 1em;
+	border: none;
+	cursor: pointer;
+	width: 4em;
+	text-decoration: none;
+	font-size: 0.8em;
+}
+
+
+#loginButton:hover, #return:hover{
+  opacity: 0.8;
+}

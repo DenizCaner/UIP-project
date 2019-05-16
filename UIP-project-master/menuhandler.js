@@ -6,6 +6,7 @@ $(function () {
 
     // First we hide all menus, but the one with all courses.
     //
+	//$(".supp").hide();
     
     var names = ["Vinspirit","Whisky,Malt","Calvados", "Grappa", "Brandy","Cognac","Okryddad sprit","Kryddad sprit","\u00c3\u2013l, Ale","Rom","Whisky, Grain"];
 	
@@ -77,7 +78,7 @@ function categorizeBeverages(type, arr) {
         // Otherwise we skip to the next item.
         //
         if (arr[i].catgegory == type) {
-            out += '<div><div class="menuitem" id="' + "menuitem" + id + '" draggable="true" ondragstart="drag(event)" onclick=\"supp('+id+')\">' + arr[i].name+ ' <span class="price">' + arr[i].priceinclvat + '</span></div></div>';
+            out += '<div><div class="menuitem" id="' + "menuitem" + id + '" draggable="true" ondragstart="drag(event)" onclick=\"supp('+id+')\">' + arr[i].name+ ' <span class="price">' + arr[i].priceinclvat + '</span><button class=\"supp\"  > X</button></div></div>';
 			id++;
 		}
     }

@@ -1,0 +1,140 @@
+
+* {
+      box-sizing: border-box;
+    }
+
+/* Background */
+
+body {
+  background-image: url("./images/background_image.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+/*Title */
+
+#title {
+  text-align: left;
+}
+
+#title span {
+  margin-left: 1em;
+}
+
+#title button {
+  background-color: #556B2F;
+  border: none;
+  color: navajowhite;
+  font-size: 0.5em;
+  margin: 0.5em 2em 0.5em 0em;
+  float: right;
+}
+
+#title button:hover {
+  opacity: 0.5;
+}
+
+/* Weekly Recommendations */
+.Mainbody{
+
+    height:680px;
+}
+
+
+/* Beverages menu*/
+
+.beveragesmenucontainer {
+  position: relative;
+  height: 70%;
+  width: 47%;
+  margin: 5px;
+  float:right;
+ 
+}
+
+#beveragesmenutabs {
+    width: 100%;
+    position :absolute;
+    top: 0%;
+}
+
+.beveragesmenu {
+    overflow-y:scroll;
+    position :absolute;
+    top: 15%;
+    width:90%;
+    background-color: lightgrey;
+    border: 10px;
+    border-style: solid;
+    border-color: #556B2F;
+    padding: 5px;
+    max-height: 92%;   
+}
+
+/*Food menu*/
+
+.foodmenucontainer {
+  position:relative;
+  width: 47%;
+  height: 70%;
+  margin: 5px;
+  float:left;
+}
+
+
+.foodmenu {
+    overflow-y:scroll;
+    position: absolute;
+    top: 15%;
+    width:90%;
+    min-height: 92%;
+    background-color: lightgrey;
+    border: 10px;
+    border-style: solid;
+    border-color: #556B2F;
+    padding: 5px;
+    max-height: 92%;
+}
+
+#foodmenutabs {
+    width: 100%;
+    position :absolute;
+    top: 0%;
+}
+
+
+/*
+The menu tabs are actually list items in a refined horisontal list.
+*/
+ul#mtabs {
+    list-style: none;  /* Removes the bullet */
+}
+
+/*
+The menu tabs
+*/
+#mtabs li {
+    box-sizing: border-box;
+    margin: auto;
+    float: left;
+    display: inline;  /* Makes the list horisontal */
+    padding: 4px;
+    border-radius: 10px 10px 0px 0px; /* We use rounded top corners to give the tab feeling */
+    background-color: #556B2F;
+    color: navajowhite;
+}
+
+/* End menu styles ==========================
+*/
+
+
+
+.wrapper {
+  float:left;
+}
+
+.clear {
+  /*设置clear属性清除浮动格式*/
+  clear:both;
+}

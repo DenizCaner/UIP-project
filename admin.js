@@ -48,6 +48,7 @@ function pay(tempid) {
 
 // remove element from the order 
 function supp(id) {
+    console.log(id);
 	var  o= $("#newId"+id).html();
 	console.log(o);
 	var p=getPrices(o);
@@ -219,8 +220,9 @@ function drop(ev,el) {
 	console.log(document.getElementById("newId"+x));
     
 	order = $(tempid).html();
+    console.log( nodeCopy.id);
     $(tempid+" .supp").show();
-    undoStack.push(new eventItem(nodeCopy.id[5], tempid[2], "order"));
+    undoStack.push(new eventItem(x, tempid[2], "order"));
     // Get the prices from the order.
     //
     prices = getPrices(order);

@@ -47,13 +47,14 @@ function pay(tempid) {
 }
 
 // remove element from the order 
-function supp(id) {
-    console.log(id);
-	var  o= $("#newId"+id).html();
-	console.log(o);
+function supp(elt) {
+    //
+	var  o= $("#"+elt.id).html();
+	console.log("o ",o);
 	var p=getPrices(o);
-	var x = document.getElementById("newId"+id).parentElement.id;
-
+	console.log("id "+elt.id);
+	var x = document.getElementById(elt.id).parentElement.id;
+	console.log(" elt ", x); 
 	var orderId=x.slice(1, x.length);
     console.log(orderId);
 
@@ -64,9 +65,11 @@ function supp(id) {
     var price = parseInt(p[0].innerText);
 
     $("#t"+orderId+" .tsum").text(sum-price+" kr.");
-    $("#newId"+id).remove();
-    console.log("#newId"+id);
-    undoStack.push(new eventItem(id, orderId, "supp"));
+    $("#"+elt.id).remove();
+    //console.log("#newId"+id);
+	var id= elt.id.slice(5,elt.id.length-1);
+	//console.log(">>>>>>>>>>>>>>>>>>>>>>", id);
+    undoStack.push(new eventItem(elt.id, orderId, "supp"));
 
 }
 
@@ -96,15 +99,16 @@ function redo(){
     }
     else if (top.type == "order")
     {
-        supp(top.id);
+        supp(top);
     }   
 }
 
-function resupp(id) {
-	var  o= $("#newId"+id).html();
+function resupp(elt) {
+	
+	var  o= $(elt.id).html();
 	var p=getPrices(o);
 
-	var x = document.getElementById("newId"+id).parentElement.id;
+	var x = document.getElementById(elt.id).parentElement.id;
 
 	var orderId=x.slice(1, x.length);
 	console.log(orderId);
@@ -116,26 +120,39 @@ function resupp(id) {
     var price = parseInt(p[0].innerText);
 
     $("#t"+orderId+" .tsum").text(sum-price+" kr.");
-    $("#newId"+id).remove();
+    $(elt.id).remove();
     console.log("#newId"+id);
     redoStack.push(new eventItem(id, orderId, "supp"));
 
 }
 
-function re_order(id, tableId)
+function re_order(elt, tableId)
 {
+	console.log("elt",elt);
+	var id= elt.slice(5,elt.length-1);
     var nodeCopy = document.getElementById("menuitem"+id).cloneNode(true);
     var idElt = nodeCopy.id;
     console.log(idElt);
     var tempid = "#o" + tableId;
     var x= idElt.slice(8,idElt.length);
+	var i;
+	for( i=0; document.getElementById("newId"+x+i)!= null; i++){
+	}
     // get the order where the item is drop
-    nodeCopy.id = "newId"+x;
+    nodeCopy.id = "newId"+x+i;
 
     nodeCopy.draggable = "false"; // The new element is set as being not draggable.
 
     $(nodeCopy).appendTo(tempid);
-    console.log("eda");
+    console.log(nodeCopy);
+	
+	var div = document.getElementById("newId"+x+i);
+	console.log("div", div);
+	var parent = div.parentNode;
+	var newDiv = document.createElement("Button");
+	newDiv.innerHTML="X";
+	newDiv.setAttribute('onclick',"supp(newId"+x+i+")");
+	document.getElementById(nodeCopy.id).appendChild(newDiv);
     // Get the ID of the target (the order).
     //
 
@@ -200,25 +217,32 @@ function drop(ev,el) {
     var tempid = "#" + ev.target.id;
     var x= idElt.slice(8,idElt.length);
     console.log(tempid);
-
-    nodeCopy.id = "newId"+x;
+	var test = document.getElementById("newId"+x);
+	//console.log(test);
+	var i;
+	for( i=0; document.getElementById("newId"+x+i)!= null; i++){
+	}
+    nodeCopy.id = "newId"+x+i;
+	elt =  "newId"+x+i;
+	//elt=elt.toString();
+	//nodeCopy.onclick="supp("+nodeCopy.id+")";
 
     nodeCopy.draggable = "false"; // The new element is set as being not draggable.
-    console.log(ev.target);
+    console.log("node copy " +nodeCopy.id);
     el.appendChild(nodeCopy);
 
     // Get the HTML content of the order.
     //
 	// add delete button to the new item
-	var div = document.getElementById("newId"+x);
+	var div = document.getElementById(elt);
 	console.log("div", div);
 	var parent = div.parentNode;
 	var newDiv = document.createElement("Button");
 	newDiv.innerHTML="X";
-	document.getElementById("newId"+x).appendChild(newDiv);
+	newDiv.setAttribute('onclick',"supp("+elt+")");
+	document.getElementById(nodeCopy.id).appendChild(newDiv);
 	console.log("new", newDiv);
-	console.log(document.getElementById("newId"+x));
-    
+	   
 	order = $(tempid).html();
     console.log( nodeCopy.id);
     $(tempid+" .supp").show();

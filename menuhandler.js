@@ -77,7 +77,7 @@ function categorizeBeverages(type, arr) {
         // Otherwise we skip to the next item.
         //
         if (arr[i].catgegory == type) {
-            out += '<div><div class="menuitem" id="' + "menuitem" + id + '" draggable="true" ondragstart="drag(event)" onclick=\"supp('+id+')\">' + arr[i].name+ ' <span class="price">' + arr[i].priceinclvat + '</span></div></div>';
+            out += '<div><div class="menuitem" id="' + 'menuitem' + id + '" draggable="true" ondragstart="drag(event)">' + arr[i].name+ ' <span class="price">' + arr[i].priceinclvat + '</span></div></div>';
 			id++;
 		}
     }

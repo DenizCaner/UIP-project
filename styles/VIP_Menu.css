@@ -1,31 +1,5 @@
-/* here added the background image */
 body {
-  background-image: url("./images/background_image.jpg");
-  background-repeat: repeat;
-  background-size: cover;
-}
-
-/* here is the style of the welcome header */
-
-#title {
-  text-align: left;
-}
-
-#title span {
-  margin-left: 1em;
-}
-
-#title button {
-  background-color: #556B2F;
-  border: none;
-  color: navajowhite;
-  font-size: 0.5em;
-  margin: 0.5em 2em 0.5em 0em;
-  float: right;
-}
-
-#title button:hover {
-  opacity: 0.5;
+    background-repeat: repeat-y;
 }
 
 .account {

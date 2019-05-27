@@ -1,3 +1,5 @@
+// The database containing translations. Each key has an english and swedish translation.
+
 var trans = {
     "translations" : [
     {   "key" : "welcome",

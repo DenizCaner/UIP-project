@@ -78,7 +78,9 @@ function supp(elt) {
 // UNDO-REDO
 
 function undo(){
+	
     var top = undoStack.pop();
+	console.log(" undo ", top);
     if(top.type == "order")
     {
         resupp(top.id);
@@ -92,6 +94,7 @@ function undo(){
 
 function redo(){ 
     var top = redoStack.pop();
+	console.log(" redo ", top);
     if(top.type == "supp")
     {
         re_order(top.id, top.tableId);
@@ -103,15 +106,15 @@ function redo(){
     }   
 }
 
-function resupp(elt) {
-	
-	var  o= $(elt.id).html();
+function resupp(elt) { 
+	var  o= $("#"+elt).html();
 	var p=getPrices(o);
-
-	var x = document.getElementById(elt.id).parentElement.id;
+	console.log(" resupp ", elt);
+	console.log(o);
+	console.log(p);
+	var x = document.getElementById(elt).parentElement.id;
 
 	var orderId=x.slice(1, x.length);
-	console.log(orderId);
 
 	order = $("#"+x).html();
 
@@ -120,15 +123,14 @@ function resupp(elt) {
     var price = parseInt(p[0].innerText);
 
     $("#t"+orderId+" .tsum").text(sum-price+" kr.");
-    $(elt.id).remove();
-    console.log("#newId"+id);
-    redoStack.push(new eventItem(id, orderId, "supp"));
+    $("#"+elt).remove(); 
+    redoStack.push(new eventItem(elt, orderId, "supp"));
 
 }
 
 function re_order(elt, tableId)
 {
-	console.log("elt",elt);
+	console.log("reorder ",elt);
 	var id= elt.slice(5,elt.length-1);
     var nodeCopy = document.getElementById("menuitem"+id).cloneNode(true);
     var idElt = nodeCopy.id;
@@ -141,7 +143,7 @@ function re_order(elt, tableId)
     // get the order where the item is drop
     nodeCopy.id = "newId"+x+i;
 
-    nodeCopy.draggable = "false"; // The new element is set as being not draggable.
+    nodeCopy.draggable = "false"; 
 
     $(nodeCopy).appendTo(tempid);
     console.log(nodeCopy);
@@ -156,14 +158,11 @@ function re_order(elt, tableId)
     // Get the ID of the target (the order).
     //
 
-    //window.confirm("drop here "+ev.target.id);
-
     // Get the HTML content of the order.
     //
 
     order = $(tempid).html();
     $(tempid+" .supp").show();
-    console.log("eda");
     console.log(undoStack);
     // Get the prices from the order.
     //
@@ -176,7 +175,6 @@ function re_order(elt, tableId)
     // Replace the content of the order with the new sum
     //
     $(orderTable(tempid) + " .tsum").text(sum + " kr.");
-
 }
 
 
@@ -224,8 +222,6 @@ function drop(ev,el) {
 	}
     nodeCopy.id = "newId"+x+i;
 	elt =  "newId"+x+i;
-	//elt=elt.toString();
-	//nodeCopy.onclick="supp("+nodeCopy.id+")";
 
     nodeCopy.draggable = "false"; // The new element is set as being not draggable.
     console.log("node copy " +nodeCopy.id);
@@ -246,7 +242,7 @@ function drop(ev,el) {
 	order = $(tempid).html();
     console.log( nodeCopy.id);
     $(tempid+" .supp").show();
-    undoStack.push(new eventItem(x, tempid[2], "order"));
+    undoStack.push(new eventItem("newId"+x+i, tempid[2], "order"));
     // Get the prices from the order.
     //
     prices = getPrices(order);
